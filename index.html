@@ -706,13 +706,26 @@
     </section>
     <!-- Plans Section -->
     <section class="plans-section">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Escolha o Plano Ideal</h2>
-            <div class="plan-cards">
-                <div class="plan-card" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="plan-name">Iniciante</h3>
-                    <p class="plan-price">R$ 49,90<span> mensal</span></p>
-                    <ul class="plan-features">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Escolha o Plano Ideal</h2>
+        <div class="plan-cards">
+           
+		<div class="plan-card" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="plan-name">Teste 4 dias grátis</h3>
+                <p class="plan-price">R$ 49,90<span> mensal</span></p>
+                <ul class="plan-features">
+                        <li>2 Usuários</li>
+			<li>2 Conexões de Whasapp</li>
+			<li>4 dias de acesso gratuito</li>
+			<li>Todos os recursos ativos</li>
+		    </ul>
+                    <button class="cta-button" onclick="openModal()">Quero Teste Grátis</button>
+                </div>
+			
+		<div class="plan-card" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="plan-name">Iniciante</h3>
+                <p class="plan-price">R$ 49,90*<span> mensal</span></p>
+                <ul class="plan-features">
                         <li>2 Usuários</li>
 			<li>2 Conexões de Whasapp</li>
                         <li>5 Departamentos</li>
@@ -721,15 +734,16 @@
 			<li>Resostas Rápidas</li>
 			<li>Agendamentos Ilimitados</li>
 			<li>Chat Interno</li>
-			<li>Informativos</li>			
+			<li>Informativos</li>
+			<li><i>*Contrato Anual</i></li>
                     </ul>
-                    <button class="cta-button" onclick="openModal()">Começar Agora</button>
+                    <button class="cta-button" onclick="openModal()">Escolher Iniciante</button>
                 </div>
 
                 <div class="plan-card" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="plan-name">Intermediário</h3>
-                    <p class="plan-price">R$ 99,90<span> mensal</span></p>
-                    <ul class="plan-features">
+                <h3 class="plan-name">Intermediário</h3>
+                <p class="plan-price">R$ 99,90*<span> mensal</span></p>
+                <ul class="plan-features">
       			<li>5 Usuários</li>
 			<li>5 Conexões de Whasapp</li>
                         <li>10 Departamentos</li>
@@ -741,14 +755,15 @@
 			<li>Informativos</li>
 			<li><b>Campanhas</b></li>
 			<li><b>Integrações</b></li>
+			<li><i>*Contrato Anual</i></li>
                     </ul>
                     <button class="cta-button" onclick="openModal()">Escolher Intermediário</button>
                 </div>
 
                 <div class="plan-card" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="plan-name">Avançado</h3>
-                    <p class="plan-price">R$ 149,90<span> mensal</span></p>
-                    <ul class="plan-features">
+                <h3 class="plan-name">Avançado</h3>
+                <p class="plan-price">R$ 149,90*<span> mensal</span></p>
+                <ul class="plan-features">
       			<li>10 Usuários</li>
 			<li>10 Conexões de Whasapp</li>
                         <li>15 Departamentos</li>
@@ -761,14 +776,15 @@
 			<li><b>Campanhas</b></li>
 			<li><b>Integrações</b></li>
 			<li><b>API OpenAI/ChatGPT</b></li>
+			<li><i>*Contrato Anual</i></li>
                     </ul>
                     <button class="cta-button" onclick="openModal()">Escolher Avançado</button>
                 </div>
 
-		        <div class="plan-card" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="plan-name">Personalizado</h3>
-                    <p class="plan-price">R$ 299,90<span> mensal</span></p>
-                    <ul class="plan-features">
+		<div class="plan-card" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="plan-name">Personalizado</h3>
+                <p class="plan-price">R$ 299,90*<span> mensal</span></p>
+                <ul class="plan-features">
 			<li>15 Usuários</li>
 			<li>15 Conexões de Whasapp</li>
                         <li>20 Departamentos</li>
@@ -782,9 +798,10 @@
 			<li><b>Integrações</b></li>
 			<li><b>API OpenAI/ChatGPT</b></li>
 			<li><b>Instalação Personalizada</b></li>
-			<li><b>PERSONALIZADO COM LOGO E CORES DA EMPRESA</b></li>
+			<li><b>COM LOGO E CORES DA EMPRESA</b></li>
+			<li><i>*Contrato Anual</i></li>
                     </ul>
-                    <button class="cta-button" onclick="openModal()">Escolher Avançado</button>
+                    <button class="cta-button" onclick="openModal()">Escolher Personalizado</button>
                 </div>
             </div>
         </div>
@@ -846,6 +863,8 @@
                 <div class="form-group">
                     <input type="email" id="email" class="form-input" placeholder="Seu E-mail" required>
                 </div>
+                <!-- Campo oculto para armazenar o nome do plano -->
+                <input type="hidden" id="planName" name="planName">
                 <button type="submit" class="cta-button">Começar Agora</button>
             </form>
         </div>
@@ -862,7 +881,8 @@
         });
 
         // Controle do Modal
-        function openModal() {
+        function openModal(planName) {
+            document.getElementById('planName').value = planName;
             document.getElementById('leadModal').style.display = 'block';
             document.body.style.overflow = 'hidden';
         }
@@ -891,12 +911,12 @@
             const name = document.getElementById('name').value;
             const whatsappNumber = document.getElementById('whatsappNumber').value;
             const email = document.getElementById('email').value;
-            const message = `Nome: ${name}%0AWhatsApp: ${whatsappNumber}%0AEmail: ${email}`;
+            const planName = document.getElementById('planName').value;
+            const message = `Olá, sou ${name}, meu whatsapp é o ${whatsappNumber}, e meu e-mail: ${email}. Estou interessado em ${planName}. Aguardo o retorno. Obrigado.`;
 
-            const whatsappUrl = `https://wa.me/5517991616242?text=${message}`;
+            const whatsappUrl = `https://wa.me/5517991616242?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
         }
-
         // Animação dos números
         function animateNumber(element) {
             const final = parseInt(element.getAttribute('data-value'));
