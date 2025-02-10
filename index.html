@@ -809,72 +809,71 @@
         </div>
     </footer>
 
-<!-- Modal -->
-<div id="leadModal" class="modal">
-    <div class="modal-content">
-        <span class="modal-close" onclick="closeModal()">&times;</span>
-        <h2 class="section-title">Comece Seu Teste Grátis</h2>
-        <form id="leadForm" onsubmit="sendWhatsAppMessage(event)">
-            <div class="form-group">
-                <input type="text" id="name" class="form-input" placeholder="Seu Nome" required>
-            </div>
-            <div class="form-group">
-                <input type="tel" id="whatsappNumber" class="form-input" placeholder="(11) 99999-9999" required>
-            </div>
-            <div class="form-group">
-                <input type="email" id="email" class="form-input" placeholder="Seu E-mail" required>
-            </div>
-            <button type="submit" class="cta-button">Começar Agora</button>
-        </form>
+    <!-- Modal -->
+    <div id="leadModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h2 class="section-title">Comece Seu Teste Grátis</h2>
+            <form id="leadForm" onsubmit="sendWhatsAppMessage(event)">
+                <div class="form-group">
+                    <input type="text" id="name" class="form-input" placeholder="Seu Nome" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="whatsappNumber" class="form-input" placeholder="(11) 99999-9999" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" class="form-input" placeholder="Seu E-mail" required>
+                </div>
+                <button type="submit" class="cta-button">Começar Agora</button>
+            </form>
+        </div>
     </div>
-</div>
-
+	
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      <script>
-    // Inicialização do AOS
-    AOS.init({
-        duration: 1000,
-        once: true,
-        offset: 100
-    });
+        // Inicialização do AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
 
-    // Controle do Modal
-    function openModal() {
-        document.getElementById('leadModal').style.display = 'block';
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-        document.getElementById('leadModal').style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-
-    // Máscara para WhatsApp
-    document.getElementById('whatsappNumber').addEventListener('input', function(e) {
-        let value = e.target.value.replace(/\D/g, '');
-        if (value.length >= 2) {
-            value = '(' + value.substring(0,2) + ') ' + value.substring(2);
+        // Controle do Modal
+        function openModal() {
+            document.getElementById('leadModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
         }
-        if (value.length >= 10) {
-            value = value.substring(0,10) + '-' + value.substring(10);
+
+        function closeModal() {
+            document.getElementById('leadModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
-        e.target.value = value;
-    });
 
-    // Envio de mensagem para WhatsApp
-    function sendWhatsAppMessage(event) {
-        event.preventDefault();
+        // Máscara para WhatsApp
+        document.getElementById('whatsappNumber').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 2) {
+                value = '(' + value.substring(0,2) + ') ' + value.substring(2);
+            }
+            if (value.length >= 10) {
+                value = value.substring(0,10) + '-' + value.substring(10);
+            }
+            e.target.value = value;
+        });
 
-        const name = document.getElementById('name').value;
-        const whatsappNumber = document.getElementById('whatsappNumber').value;
-        const email = document.getElementById('email').value;
-        const message = `Nome: ${name}%0AWhatsApp: ${whatsappNumber}%0AEmail: ${email}`;
+        // Envio de mensagem para WhatsApp
+        function sendWhatsAppMessage(event) {
+            event.preventDefault();
 
-        const whatsappUrl = `https://wa.me/5517991616242?text=${message}`;
-        window.open(whatsappUrl, '_blank');
-    }
+            const name = document.getElementById('name').value;
+            const whatsappNumber = document.getElementById('whatsappNumber').value;
+            const email = document.getElementById('email').value;
+            const message = `Nome: ${name}%0AWhatsApp: ${whatsappNumber}%0AEmail: ${email}`;
+
+            const whatsappUrl = `https://wa.me/5517991616242?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        }
 
         // Animação dos números
         function animateNumber(element) {
@@ -887,7 +886,6 @@
                 if (current >= final) {
                     current = final;
                     clearInterval(timer);
-                    // Adiciona o símbolo de % se necessário
                     if (element.nextElementSibling.textContent.includes('%')) {
                         element.textContent = `${current}%`;
                     } else {
@@ -917,35 +915,7 @@
                 numberObserver.observe(number);
             });
         });
-
-        // Inicializar observers
-        document.querySelectorAll('.stat-number').forEach(el => {
-            observer.observe(el);
-        });
-
-    // Form submission (AGORA COM EMAILJS)
-       const btn = document.getElementById('button');
-
-document.getElementById('form')
- .addEventListener('submit', function(event) {
-   event.preventDefault();
-
-   btn.value = 'Sending...';
-
-   const serviceID = 'service_01xlc8e';
-   const templateID = 'autozapi_leadsite';
-
-   emailjs.sendForm(serviceID, templateID, this)
-    .then(() => {
-      btn.value = 'Send Email';
-      alert('Sent!');
-    }, (err) => {
-      btn.value = 'Send Email';
-      alert(JSON.stringify(err));
-    });
-});
     </script>
-
 </body>
 
 </html>
