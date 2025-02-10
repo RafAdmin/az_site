@@ -4,486 +4,482 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AutoZapi - Atendimento Inteligente</title>
+    <meta name="description" content="Revolucione seus atendimentos com AutoZapi e veja seu faturamento decolar!">
+    <meta name="keywords" content="AutoZapi, Atendimento, WhatsApp, CRM, Chatbot, Automação">
+    <meta name="author" content="AutoZapi Team">
 
     <!-- Fonts e CSS externos -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
+    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+   
     <style>
         /* (Seu CSS - não mudou) */
         :root {
-            --primary-color: #25D366;
-            --primary-dark: #128C7E;
-            --primary-light: #DCF8C6;
-            --secondary-color: #34B7F1;
-            --text-color: #333333;
-            --light-bg: #F0F4F8;
-            --white: #FFFFFF;
-            --cream-bg: #FAF9F6;
-            --gradient-primary: linear-gradient(135deg, #25D366, #128C7E);
-            --gradient-secondary: linear-gradient(135deg, #34B7F1, #085373);
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
-            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
-            --transition-fast: 0.3s ease;
-            --transition-slow: 0.5s ease;
-            --border-radius-sm: 8px;
-            --border-radius-md: 12px;
-            --border-radius-lg: 20px;
-        }
+    --primary-color: #25D366;
+    --primary-dark: #128C7E;
+    --primary-light: #DCF8C6;
+    --secondary-color: #34B7F1;
+    --text-color: #333333;
+    --light-bg: #F0F4F8;
+    --white: #FFFFFF;
+    --cream-bg: #FAF9F6;
+    --gradient-primary: linear-gradient(135deg, #25D366, #128C7E);
+    --gradient-secondary: linear-gradient(135deg, #34B7F1, #085373);
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+    --transition-fast: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 20px;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-        body {
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--light-bg);
-            overflow-x: hidden;
-        }
+body {
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    overflow-x: hidden;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            position: relative;
-        }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
 
-        /* Logo Section */
-        .logo-section {
-            background: var(--cream-bg);
-            padding: 20px 0;
-            text-align: center;
-        }
+.logo-section {
+    background: var(--cream-bg);
+    padding: 20px 0;
+    text-align: center;
+}
 
-        .logo {
-            max-width: 250px;
-            height: auto;
-            transition: transform var(--transition-fast);
-        }
+.logo {
+    max-width: 250px;
+    height: auto;
+    transition: transform var(--transition-fast);
+}
 
-        .logo:hover {
-            transform: scale(1.05);
-        }
-        /* Header Styles */
-        header {
-            background: var(--gradient-primary);
-            color: var(--white);
-            padding: 80px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
+.logo:hover {
+    transform: scale(1.05);
+}
 
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
-            opacity: 0.1;
-        }
+header {
+    background: var(--gradient-primary);
+    color: var(--white);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
 
-        .slogan {
-            font-size: 1.8em;
-            font-weight: 300;
-            margin-bottom: 20px;
-            opacity: 0;
-            animation: fadeInUp 1s forwards;
-            animation-delay: 0.5s;
-        }
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-7 64c0 3.866 3.134 7 7 7s7-3.134 7-7-3.134-7-7-7-7 3.134-7 7zm30-93c-3.866 0-7 3.134-7 7s3.134 7 7 7 7-3.134 7-7-3.134-7-7-7zm0 93c-3.866 0-7 3.134-7 7s3.134 7 7 7 7-3.134 7-7-3.134-7-7-7zm30-64c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm0 64c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm30-93c-3.866 0-7 3.134-7 7s3.134 7 7 7 7-3.134 7-7-3.134-7-7-7zm0 93c-3.866 0-7 3.134-7 7s3.134 7 7 7 7-3.134 7-7-3.134-7-7-7zM11 82c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm30-30c-3.866 0-7 3.134-7 7s3.134 7 7 7 7-3.134 7-7-3.134-7-7-7zm30 30c-3.866 0-7 3.134-7 7s3.134 7 7 7 7-3.134 7-7-3.134-7-7-7zm30-30c-3.866 0-7 3.134-7 7s3.134 7 7 7 7-3.134 7-7-3.134-7-7-7z' fill='%23ffffff' fill-opacity='0.4'/%3E%3C/svg%3E");
+    opacity: 0.1;
+}
 
-        .impact-phrase {
-            font-size: 3.2em;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 40px;
-            opacity: 0;
-            animation: fadeInUp 1s forwards;
-            animation-delay: 0.8s;
-        }
+.slogan {
+    font-size: 1.8em;
+    font-weight: 300;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0.5s;
+}
 
-        /* CTA Button */
-        .cta-button {
-            display: block;
-            width: fit-content;
-            margin: 30px auto;
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 18px 36px;
-            border-radius: var(--border-radius-lg);
-            font-weight: 600;
-            font-size: 1.1em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all var(--transition-fast);
-            border: none;
-            position: relative;
-            overflow: hidden;
-            text-decoration: none;
-            text-align: center;
-        }
+.impact-phrase {
+    font-size: 3.2em;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0.8s;
+}
 
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-primary);
-            z-index: -1;
-            transition: transform var(--transition-fast);
-            transform: scaleX(0);
-            transform-origin: right;
-        }
+.cta-button {
+    display: block;
+    width: fit-content;
+    margin: 30px auto;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 18px 36px;
+    border-radius: var(--border-radius-lg);
+    font-weight: 600;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border: none;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    text-align: center;
+}
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    z-index: -1;
+    transition: transform var(--transition-fast);
+    transform: scaleX(0);
+    transform-origin: right;
+}
 
-        .cta-button:hover::before {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
 
-        /* Stats Section */
-        .stats-section {
-            background: var(--white);
-            padding: 60px 0;
-            margin-top: -40px;
-        }
+.cta-button:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
 
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            padding: 20px;
-        }
+.stats-section {
+    background: var(--white);
+    padding: 60px 0;
+    margin-top: -40px;
+}
 
-        .stat-item {
-            background: var(--white);
-            padding: 30px;
-            border-radius: var(--border-radius-md);
-            box-shadow: var(--shadow-lg);
-            text-align: center;
-            transform: translateY(0);
-            transition: all var(--transition-fast);
-        }
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
 
-        .stat-item:hover {
-            transform: translateY(-10px);
-        }
+.stat-item {
+    background: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+    transform: translateY(0);
+    transition: all var(--transition-fast);
+}
 
-       
-        .stat-number { 
-            font-size: 3.5em; 
-            font-weight: 700; 
-            color: var(--primary-dark) 
-        !important; 
-            margin-bottom: 15px; 
-            display: block; 
-        }
+.stat-item:hover {
+    transform: translateY(-10px);
+}
 
-        .stat-text {
-            font-size: 1.1em;
-            color: var(--text-color);
-        }
-        /* Problems & Solutions Sections */
-        .problems-section,
-        .solutions-section {
-            padding: 80px 0;
-            position: relative;
-        }
+.stat-number {
+    font-size: 3.5em;
+    font-weight: 700;
+    color: var(--primary-dark) !important;
+    margin-bottom: 15px;
+    display: block;
+}
 
-        .problems-section {
-            background: linear-gradient(135deg, #f6f9fc 0%, #e9ecef 100%);
-        }
+.stat-text {
+    font-size: 1.1em;
+    color: var(--text-color);
+}
 
-        .solutions-section {
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-        }
+.problems-section,
+.solutions-section {
+    padding: 80px 0;
+    position: relative;
+}
 
-        .section-title {
-            text-align: center;
-            font-size: 2.5em;
-            color: var(--primary-dark);
-            margin-bottom: 50px;
-            position: relative;
-            padding-bottom: 20px;
-        }
+.problems-section {
+    background: linear-gradient(135deg, #f6f9fc 0%, #e9ecef 100%);
+}
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: var(--gradient-primary);
-            border-radius: 2px;
-        }
+.solutions-section {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
 
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 20px;
-        }
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    color: var(--primary-dark);
+    margin-bottom: 50px;
+    position: relative;
+    padding-bottom: 20px;
+}
 
-        .problem-card,
-        .solution-card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: var(--border-radius-md);
-            box-shadow: var(--shadow-md);
-            transition: all var(--transition-fast);
-            text-align: center;
-        }
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
 
-        .card-icon {
-            font-size: 2.5em;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            display: block;
-        }
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
 
-        .card-title {
-            font-size: 1.3em;
-            color: var(--primary-dark);
-            margin-bottom: 15px;
-        }
+.problem-card,
+.solution-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-fast);
+    text-align: center;
+}
 
-        .problem-card:hover,
-        .solution-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-        }
+.card-icon {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: block;
+}
 
-        /* Features Section */
-        .features-section {
-            background: var(--gradient-primary);
-            padding: 100px 0;
-            position: relative;
-        }
+.card-title {
+    font-size: 1.3em;
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+}
 
-        .features-section .section-title,
-        .features-section .card-title,
-        .features-section .card-text {
-            color: var(--white);
-        }
+.problem-card:hover,
+.solution-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
 
-        .feature-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: var(--border-radius-md);
-            padding: 30px;
-            text-align: center;
-            transition: all var(--transition-fast);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
+.features-section {
+    background: var(--gradient-primary);
+    padding: 100px 0;
+    position: relative;
+}
 
-        .feature-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.2);
-        }
+.features-section .section-title,
+.features-section .card-title,
+.features-section .card-text {
+    color: var(--white);
+}
 
-        .feature-icon {
-            font-size: 3em;
-            color: var(--white);
-            margin-bottom: 20px;
-            display: block;
-        }
+.feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius-md);
+    padding: 30px;
+    text-align: center;
+    transition: all var(--transition-fast);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
 
-        /* Plans Section */
-        .plans-section {
-            background: var(--light-bg);
-            padding: 100px 0;
-        }
+.feature-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
+}
 
-    .plan-cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-        padding: 20px;
+.feature-icon {
+    font-size: 3em;
+    color: var(--white);
+    margin-bottom: 20px;
+    display: block;
+}
+.plans-section {
+    background: var(--light-bg);
+    padding: 100px 0;
+}
+
+.plan-cards {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 20px;
+}
+
+.plan-card {
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: 20px;
+    text-align: center;
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    min-width: 300px;
+    scroll-snap-align: start;
+}
+
+.plan-card.popular {
+    border: 2px solid var(--primary-color);
+    box-shadow: var(--shadow-lg);
+}
+
+.plan-name {
+    font-size: 1.5em;
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+}
+
+.plan-price {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.plan-features li {
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.final-cta {
+    background: var(--gradient-secondary);
+    color: var(--white);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.final-cta-title {
+    font-size: 2.8em;
+    margin-bottom: 30px;
+}
+
+.persuasive-text {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    opacity: 0.9;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: var(--white);
+    width: 90%;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 40px;
+    border-radius: var(--border-radius-lg);
+    position: relative;
+    transform: translateY(-50px);
+    opacity: 0;
+    animation: slideIn 0.5s ease forwards;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: color var(--transition-fast);
+}
+
+.modal-close:hover {
+    color: var(--primary-color);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: var(--border-radius-sm);
+    font-size: 16px;
+    transition: all var(--transition-fast);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.1);
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
     }
-    .plan-card {
-        background: var(--white);
-        border-radius: var(--border-radius-lg);
-        padding: 20px;
-        text-align: center;
-        transition: all var(--transition-fast);
-        box-shadow: var(--shadow-md);
-        position: relative;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    .plan-card.popular {
-        border: 2px solid var(--primary-color);
-        box-shadow: var(--shadow-lg);
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-    .plan-name {
-        font-size: 1.5em;
-        color: var(--primary-dark);
-        margin-bottom: 10px;
+}
+
+@keyframes floatingAnimation {
+    0% {
+        transform: translateY(0px);
     }
-    .plan-price {
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@media (max-width: 768px) {
+    .impact-phrase {
         font-size: 2em;
-        color: var(--primary-color);
-        margin-bottom: 20px;
-    }
-    .plan-features {
-        list-style: none;
-        padding: 0;
-        margin: 20px 0;
-    }
-    .plan-features li {
-        margin-bottom: 10px;
-        font-size: 1em;
-
-/* Final CTA Section */
-    }
-    .cta-button {
-        display: inline-block;
-        background: var(--primary-color);
-        color: var(--white);
-        padding: 10px 20px;
-        border-radius: var(--border-radius-md);
-        text-decoration: none;
-        transition: all var(--transition-fast);
-    }
-    .cta-button:hover {
-        background: var(--primary-dark);
-        box-shadow: var(--shadow-lg);
     }
 
-        .persuasive-text {
-            font-size: 1.2em;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            opacity: 0.9;
-        }
+    .stats-container,
+    .card-grid,
+    .plan-cards {
+        grid-template-columns: 1fr;
+    }
 
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-content {
-            background: var(--white);
-            width: 90%;
-            max-width: 500px;
-            margin: 50px auto;
-            padding: 40px;
-            border-radius: var(--border-radius-lg);
-            position: relative;
-            transform: translateY(-50px);
-            opacity: 0;
-            animation: slideIn 0.5s ease forwards;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 24px;
-            cursor: pointer;
-            color: var(--text-color);
-            transition: color var(--transition-fast);
-        }
-
-        .modal-close:hover {
-            color: var(--primary-color);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: var(--border-radius-sm);
-            font-size: 16px;
-            transition: all var(--transition-fast);
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.1);
-        }
-
-        /* Animations */
-        @keyframes slideIn {
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes floatingAnimation {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .impact-phrase {
-                font-size: 2em;
-            }
-
-            .stats-container,
-            .card-grid,
-            .plan-cards {
-                grid-template-columns: 1fr;
-            }
-
-            .modal-content {
-                width: 95%;
-                margin: 20px auto;
-                padding: 20px;
-            }
-        }
-
-/* Estilos do Rodapé */
+    .modal-content {
+        width: 95%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+}
 
 .footer {
     background: var(--primary-dark);
@@ -538,6 +534,7 @@
     margin: 0 10px;
 }
     </style>
+
 </head>
 
 <body>
@@ -561,26 +558,25 @@
         </div>
     </header>
 
-<!-- Stats Section -->
-<section class="stats-section">
-    <div class="container">
-        <div class="stats-container">
-            <div class="stat-item" data-aos="fade-up">
-                <div class="stat-number" data-value="148">0</div>
-                <p class="stat-text">Milhões de usuários do WhatsApp no Brasil</p>
-            </div>
-            <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-                <div class="stat-number" data-value="80">0</div>
-                <p class="stat-text">% dos brasileiros usam WhatsApp diariamente</p>
-            </div>
-            <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
-                <div class="stat-number" data-value="76">0</div>
-                <p class="stat-text">% das empresas já vendem pelo WhatsApp</p>
-            </div>
-        </div><center><i>Fonte: www.aisensy.com </i></center>
-    </div>
-</section>
-
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-item" data-aos="fade-up">
+                    <div class="stat-number" data-value="148">0</div>
+                    <p class="stat-text">Milhões de usuários do WhatsApp no Brasil</p>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-number" data-value="80">0</div>
+                    <p class="stat-text">% dos brasileiros usam WhatsApp diariamente</p>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-number" data-value="76">0</div>
+                    <p class="stat-text">% das empresas já vendem pelo WhatsApp</p>
+                </div>
+            </div><center><i>Fonte: www.aisensy.com </i></center>
+        </div>
+    </section>
 
     <!-- Problems Section -->
     <section class="problems-section">
@@ -617,7 +613,6 @@
                     <h3 class="card-title">Atendimento Genérico</h3>
                     <p class="card-text">Clientes se sentem desvalorizados quando recebem respostas genéricas.</p>
                 </div>
-
             </div>
         </div>
     </section>
@@ -637,7 +632,7 @@
                     <h3 class="card-title">Gestão Centralizada</h3>
                     <p class="card-text">CRM integrado com histórico completo de interações.</p>
                 </div>
-		<div class="solution-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="solution-card" data-aos="fade-up" data-aos-delay="500">
                     <i class="card-icon fas fa-network-wired"></i>
                     <h3 class="card-title">Organização</h3>
                     <p class="card-text">Cresça sem limites com nossa infraestrutura robusta.</p>
@@ -657,12 +652,11 @@
                     <h3 class="card-title">Escalabilidade</h3>
                     <p class="card-text">Cresça sem limites com nossa infraestrutura robusta.</p>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
+<!-- Features Section -->
     <section class="features-section">
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Funcionalidades Poderosas</h2>
@@ -700,100 +694,100 @@
             </div>
         </div>
     </section>
-	
+
     <!-- Plans Section -->
-<section class="plans-section">
-    <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Escolha o Plano Ideal</h2>
-        <div class="plan-cards">
-            <div class="plan-card" data-aos="fade-up" data-aos-delay="100">
-                <h3 class="plan-name">Teste 4 dias grátis</h3>
-                <p class="plan-price">R$ 49,90<span> mensal</span></p>
-                <ul class="plan-features">
-                    <li>2 Usuários</li>
-                    <li>2 Conexões de Whasapp</li>
-                    <li>4 dias de acesso gratuito</li>
-                    <li>Todos os recursos ativos</li>
-                </ul>
-                <button class="cta-button" onclick="openModal('Teste 4 dias grátis')">Quero Teste Grátis</button>
-            </div>
-            <div class="plan-card popular" data-aos="fade-up" data-aos-delay="200">
-                <h3 class="plan-name">Iniciante</h3>
-                <p class="plan-price">R$ 49,90<span> mensal</span></p>
-                <ul class="plan-features">
-                    <li>2 Usuários</li>
-                    <li>2 Conexões de Whasapp</li>
-                    <li>5 Departamentos</li>
-                    <li>Atendimentos</li>
-                    <li>CRM Kanban</li>
-                    <li>Respostas Rápidas</li>
-                    <li>Agendamentos Ilimitados</li>
-                    <li>Chat Interno</li>
-                    <li>Informativos</li>
-                </ul>
-                <button class="cta-button" onclick="openModal('Iniciante')">Escolher Iniciante</button>
-            </div>
-            <div class="plan-card" data-aos="fade-up" data-aos-delay="300">
-                <h3 class="plan-name">Intermediário</h3>
-                <p class="plan-price">R$ 99,90<span> mensal</span></p>
-                <ul class="plan-features">
-                    <li>5 Usuários</li>
-                    <li>5 Conexões de Whasapp</li>
-                    <li>10 Departamentos</li>
-                    <li>Atendimentos</li>
-                    <li>CRM Kanban</li>
-                    <li>Respostas Rápidas</li>
-                    <li>Agendamentos Ilimitados</li>
-                    <li>Chat Interno</li>
-                    <li>Informativos</li>
-                    <li><b>Campanhas</b></li>
-                    <li><b>Integrações</b></li>
-                </ul>
-                <button class="cta-button" onclick="openModal('Intermediário')">Escolher Intermediário</button>
-            </div>
-            <div class="plan-card" data-aos="fade-up" data-aos-delay="400">
-                <h3 class="plan-name">Avançado</h3>
-                <p class="plan-price">R$ 149,90<span> mensal</span></p>
-                <ul class="plan-features">
-                    <li>10 Usuários</li>
-                    <li>10 Conexões de Whasapp</li>
-                    <li>15 Departamentos</li>
-                    <li>Atendimentos</li>
-                    <li>CRM Kanban</li>
-                    <li>Respostas Rápidas</li>
-                    <li>Agendamentos Ilimitados</li>
-                    <li>Chat Interno</li>
-                    <li>Informativos</li>
-                    <li><b>Campanhas</b></li>
-                    <li><b>Integrações</b></li>
-                    <li><b>API OpenAI/ChatGPT</b></li>
-                </ul>
-                <button class="cta-button" onclick="openModal('Avançado')">Escolher Avançado</button>
-            </div>
-            <div class="plan-card" data-aos="fade-up" data-aos-delay="500">
-                <h3 class="plan-name">Personalizado</h3>
-                <p class="plan-price">R$ 299,90<span> mensal</span></p>
-                <ul class="plan-features">
-                    <li>15 Usuários</li>
-                    <li>15 Conexões de Whasapp</li>
-                    <li>20 Departamentos</li>
-                    <li>Atendimentos</li>
-                    <li>CRM Kanban</li>
-                    <li>Respostas Rápidas</li>
-                    <li>Agendamentos Ilimitados</li>
-                    <li>Chat Interno</li>
-                    <li>Informativos</li>
-                    <li><b>Campanhas</b></li>
-                    <li><b>Integrações</b></li>
-                    <li><b>API OpenAI/ChatGPT</b></li>
-                    <li><b>Instalação Personalizada</b></li>
-                    <li><b>COM LOGO E CORES DA EMPRESA</b></li>
-                </ul>
-                <button class="cta-button" onclick="openModal('Personalizado')">Escolher Personalizado</button>
+    <section class="plans-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Escolha o Plano Ideal</h2>
+            <div class="plan-cards">
+                <div class="plan-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="plan-name">Teste 4 dias grátis</h3>
+                    <p class="plan-price">R$ 49,90<span> mensal</span></p>
+                    <ul class="plan-features">
+                        <li>2 Usuários</li>
+                        <li>2 Conexões de Whasapp</li>
+                        <li>4 dias de acesso gratuito</li>
+                        <li>Todos os recursos ativos</li>
+                    </ul>
+                    <button class="cta-button" onclick="openModal('Teste 4 dias grátis')">Quero Teste Grátis</button>
+                </div>
+                <div class="plan-card popular" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="plan-name">Iniciante</h3>
+                    <p class="plan-price">R$ 49,90<span> mensal</span></p>
+                    <ul class="plan-features">
+                        <li>2 Usuários</li>
+                        <li>2 Conexões de Whasapp</li>
+                        <li>5 Departamentos</li>
+                        <li>Atendimentos</li>
+                        <li>CRM Kanban</li>
+                        <li>Respostas Rápidas</li>
+                        <li>Agendamentos Ilimitados</li>
+                        <li>Chat Interno</li>
+                        <li>Informativos</li>
+                    </ul>
+                    <button class="cta-button" onclick="openModal('Iniciante')">Escolher Iniciante</button>
+                </div>
+                <div class="plan-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="plan-name">Intermediário</h3>
+                    <p class="plan-price">R$ 99,90<span> mensal</span></p>
+                    <ul class="plan-features">
+                        <li>5 Usuários</li>
+                        <li>5 Conexões de Whasapp</li>
+                        <li>10 Departamentos</li>
+                        <li>Atendimentos</li>
+                        <li>CRM Kanban</li>
+                        <li>Respostas Rápidas</li>
+                        <li>Agendamentos Ilimitados</li>
+                        <li>Chat Interno</li>
+                        <li>Informativos</li>
+                        <li><b>Campanhas</b></li>
+                        <li><b>Integrações</b></li>
+                    </ul>
+                    <button class="cta-button" onclick="openModal('Intermediário')">Escolher Intermediário</button>
+                </div>
+                <div class="plan-card" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="plan-name">Avançado</h3>
+                    <p class="plan-price">R$ 149,90<span> mensal</span></p>
+                    <ul class="plan-features">
+                        <li>10 Usuários</li>
+                        <li>10 Conexões de Whasapp</li>
+                        <li>15 Departamentos</li>
+                        <li>Atendimentos</li>
+                        <li>CRM Kanban</li>
+                        <li>Respostas Rápidas</li>
+                        <li>Agendamentos Ilimitados</li>
+                        <li>Chat Interno</li>
+                        <li>Informativos</li>
+                        <li><b>Campanhas</b></li>
+                        <li><b>Integrações</b></li>
+                        <li><b>API OpenAI/ChatGPT</b></li>
+                    </ul>
+                    <button class="cta-button" onclick="openModal('Avançado')">Escolher Avançado</button>
+                </div>
+                <div class="plan-card" data-aos="fade-up" data-aos-delay="500">
+                    <h3 class="plan-name">Personalizado</h3>
+                    <p class="plan-price">R$ 299,90<span> mensal</span></p>
+                    <ul class="plan-features">
+                        <li>15 Usuários</li>
+                        <li>15 Conexões de Whasapp</li>
+                        <li>20 Departamentos</li>
+                        <li>Atendimentos</li>
+                        <li>CRM Kanban</li>
+                        <li>Respostas Rápidas</li>
+                        <li>Agendamentos Ilimitados</li>
+                        <li>Chat Interno</li>
+                        <li>Informativos</li>
+                        <li><b>Campanhas</b></li>
+                        <li><b>Integrações</b></li>
+                        <li><b>API OpenAI/ChatGPT</b></li>
+                        <li><b>Instalação Personalizada</b></li>
+                        <li><b>COM LOGO E CORES DA EMPRESA</b></li>
+                    </ul>
+                    <button class="cta-button" onclick="openModal('Personalizado')">Escolher Personalizado</button>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Final CTA Section -->
     <section class="final-cta">
@@ -857,28 +851,30 @@
             </form>
         </div>
     </div>
-	
+
     <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script>
         // Inicialização do AOS
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
         });
 
         // Controle do Modal
         function openModal(planName) {
-    	document.getElementById('planName').value = planName;
-    	document.getElementById('leadModal').style.display = 'block';
-    	document.body.style.overflow = 'hidden';
-	}
+            document.getElementById('planName').value = planName;
+            document.getElementById('leadModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
 
         function closeModal() {
-    	document.getElementById('leadModal').style.display = 'none';
-    	document.body.style.overflow = 'auto';
-	}
+            document.getElementById('leadModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
 
         // Máscara para WhatsApp
         document.getElementById('whatsappNumber').addEventListener('input', function(e) {
@@ -894,18 +890,18 @@
 
         // Envio de mensagem para WhatsApp
         function sendWhatsAppMessage(event) {
-   	 event.preventDefault();
+            event.preventDefault();
 
-    	const name = document.getElementById('name').value;
-    	const whatsappNumber = document.getElementById('whatsappNumber').value;
-    	const email = document.getElementById('email').value;
-    	const planName = document.getElementById('planName').value;
-    	const message = `Olá, sou ${name}, meu whatsapp é o ${whatsappNumber}, e meu e-mail: ${email}. Estou interessado em ${planName}. Aguardo o retorno. Obrigado.`;
+            const name = document.getElementById('name').value;
+            const whatsappNumber = document.getElementById('whatsappNumber').value;
+            const email = document.getElementById('email').value;
+            const planName = document.getElementById('planName').value;
+            const message = `Olá, sou ${name}, meu whatsapp é o ${whatsappNumber}, e meu e-mail: ${email}. Estou interessado em ${planName}. Aguardo o retorno. Obrigado.`;
 
-    	const whatsappUrl = `https://wa.me/5517991616242?text=${encodeURIComponent(message)}`;
-    	window.open(whatsappUrl, '_blank');
-	}
-	    
+            const whatsappUrl = `https://wa.me/5517991616242?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
         // Animação dos números
         function animateNumber(element) {
             const final = parseInt(element.getAttribute('data-value'));
@@ -948,6 +944,4 @@
         });
     </script>
 </body>
-
 </html>
-                    
