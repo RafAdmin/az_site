@@ -313,63 +313,59 @@
             padding: 100px 0;
         }
 
-        .plan-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 20px;
-        }
+    .plan-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+    .plan-card {
+        background: var(--white);
+        border-radius: var(--border-radius-lg);
+        padding: 20px;
+        text-align: center;
+        transition: all var(--transition-fast);
+        box-shadow: var(--shadow-md);
+        position: relative;
+    }
+    .plan-card.popular {
+        border: 2px solid var(--primary-color);
+        box-shadow: var(--shadow-lg);
+    }
+    .plan-name {
+        font-size: 1.5em;
+        color: var(--primary-dark);
+        margin-bottom: 10px;
+    }
+    .plan-price {
+        font-size: 2em;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+    }
+    .plan-features {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+    }
+    .plan-features li {
+        margin-bottom: 10px;
+        font-size: 1em;
 
-        .plan-card {
-            background: var(--white);
-            border-radius: var(--border-radius-lg);
-            padding: 40px;
-            text-align: center;
-            transition: all var(--transition-fast);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .plan-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .plan-name {
-            font-size: 1.8em;
-            color: var(--primary-dark);
-            margin-bottom: 20px;
-        }
-
-        .plan-price {
-            font-size: 2.5em;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        .plan-features {
-            list-style: none;
-            margin: 20px 0;
-            padding: 0;
-        }
-
-        .plan-features li {
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        /* Final CTA Section */
-        .final-cta {
-            background: var(--gradient-secondary);
-            color: var(--white);
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .final-cta-title {
-            font-size: 2.8em;
-            margin-bottom: 30px;
-        }
+/* Final CTA Section */
+    }
+    .cta-button {
+        display: inline-block;
+        background: var(--primary-color);
+        color: var(--white);
+        padding: 10px 20px;
+        border-radius: var(--border-radius-md);
+        text-decoration: none;
+        transition: all var(--transition-fast);
+    }
+    .cta-button:hover {
+        background: var(--primary-dark);
+        box-shadow: var(--shadow-lg);
+    }
 
         .persuasive-text {
             font-size: 1.2em;
@@ -704,108 +700,100 @@
             </div>
         </div>
     </section>
+	
     <!-- Plans Section -->
-    <section class="plans-section">
+<section class="plans-section">
     <div class="container">
         <h2 class="section-title" data-aos="fade-up">Escolha o Plano Ideal</h2>
         <div class="plan-cards">
-           
-		<div class="plan-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="plan-card" data-aos="fade-up" data-aos-delay="100">
                 <h3 class="plan-name">Teste 4 dias grátis</h3>
                 <p class="plan-price">R$ 49,90<span> mensal</span></p>
                 <ul class="plan-features">
-                        <li>2 Usuários</li>
-			<li>2 Conexões de Whasapp</li>
-			<li>4 dias de acesso gratuito</li>
-			<li>Todos os recursos ativos</li>
-		    </ul>
-                    <button class="cta-button" onclick="openModal()">Quero Teste Grátis</button>
-                </div>
-			
-		<div class="plan-card" data-aos="fade-up" data-aos-delay="100">
+                    <li>2 Usuários</li>
+                    <li>2 Conexões de Whasapp</li>
+                    <li>4 dias de acesso gratuito</li>
+                    <li>Todos os recursos ativos</li>
+                </ul>
+                <button class="cta-button" onclick="openModal('Teste 4 dias grátis')">Quero Teste Grátis</button>
+            </div>
+            <div class="plan-card popular" data-aos="fade-up" data-aos-delay="200">
                 <h3 class="plan-name">Iniciante</h3>
-                <p class="plan-price">R$ 49,90*<span> mensal</span></p>
+                <p class="plan-price">R$ 49,90<span> mensal</span></p>
                 <ul class="plan-features">
-                        <li>2 Usuários</li>
-			<li>2 Conexões de Whasapp</li>
-                        <li>5 Departamentos</li>
-                        <li>Atendimentos</li>
-                        <li>CRM Kanban</li>
-			<li>Resostas Rápidas</li>
-			<li>Agendamentos Ilimitados</li>
-			<li>Chat Interno</li>
-			<li>Informativos</li>
-			<li><i>*Contrato Anual</i></li>
-                    </ul>
-                    <button class="cta-button" onclick="openModal()">Escolher Iniciante</button>
-                </div>
-
-                <div class="plan-card" data-aos="fade-up" data-aos-delay="200">
+                    <li>2 Usuários</li>
+                    <li>2 Conexões de Whasapp</li>
+                    <li>5 Departamentos</li>
+                    <li>Atendimentos</li>
+                    <li>CRM Kanban</li>
+                    <li>Respostas Rápidas</li>
+                    <li>Agendamentos Ilimitados</li>
+                    <li>Chat Interno</li>
+                    <li>Informativos</li>
+                </ul>
+                <button class="cta-button" onclick="openModal('Iniciante')">Escolher Iniciante</button>
+            </div>
+            <div class="plan-card" data-aos="fade-up" data-aos-delay="300">
                 <h3 class="plan-name">Intermediário</h3>
-                <p class="plan-price">R$ 99,90*<span> mensal</span></p>
+                <p class="plan-price">R$ 99,90<span> mensal</span></p>
                 <ul class="plan-features">
-      			<li>5 Usuários</li>
-			<li>5 Conexões de Whasapp</li>
-                        <li>10 Departamentos</li>
-                        <li>Atendimentos</li>
-                        <li>CRM Kanban</li>
-			<li>Resostas Rápidas</li>
-			<li>Agendamentos Ilimitados</li>
-			<li>Chat Interno</li>
-			<li>Informativos</li>
-			<li><b>Campanhas</b></li>
-			<li><b>Integrações</b></li>
-			<li><i>*Contrato Anual</i></li>
-                    </ul>
-                    <button class="cta-button" onclick="openModal()">Escolher Intermediário</button>
-                </div>
-
-                <div class="plan-card" data-aos="fade-up" data-aos-delay="200">
+                    <li>5 Usuários</li>
+                    <li>5 Conexões de Whasapp</li>
+                    <li>10 Departamentos</li>
+                    <li>Atendimentos</li>
+                    <li>CRM Kanban</li>
+                    <li>Respostas Rápidas</li>
+                    <li>Agendamentos Ilimitados</li>
+                    <li>Chat Interno</li>
+                    <li>Informativos</li>
+                    <li><b>Campanhas</b></li>
+                    <li><b>Integrações</b></li>
+                </ul>
+                <button class="cta-button" onclick="openModal('Intermediário')">Escolher Intermediário</button>
+            </div>
+            <div class="plan-card" data-aos="fade-up" data-aos-delay="400">
                 <h3 class="plan-name">Avançado</h3>
-                <p class="plan-price">R$ 149,90*<span> mensal</span></p>
+                <p class="plan-price">R$ 149,90<span> mensal</span></p>
                 <ul class="plan-features">
-      			<li>10 Usuários</li>
-			<li>10 Conexões de Whasapp</li>
-                        <li>15 Departamentos</li>
-                        <li>Atendimentos</li>
-                        <li>CRM Kanban</li>
-			<li>Resostas Rápidas</li>
-			<li>Agendamentos Ilimitados</li>
-			<li>Chat Interno</li>
-			<li>Informativos</li>
-			<li><b>Campanhas</b></li>
-			<li><b>Integrações</b></li>
-			<li><b>API OpenAI/ChatGPT</b></li>
-			<li><i>*Contrato Anual</i></li>
-                    </ul>
-                    <button class="cta-button" onclick="openModal()">Escolher Avançado</button>
-                </div>
-
-		<div class="plan-card" data-aos="fade-up" data-aos-delay="200">
+                    <li>10 Usuários</li>
+                    <li>10 Conexões de Whasapp</li>
+                    <li>15 Departamentos</li>
+                    <li>Atendimentos</li>
+                    <li>CRM Kanban</li>
+                    <li>Respostas Rápidas</li>
+                    <li>Agendamentos Ilimitados</li>
+                    <li>Chat Interno</li>
+                    <li>Informativos</li>
+                    <li><b>Campanhas</b></li>
+                    <li><b>Integrações</b></li>
+                    <li><b>API OpenAI/ChatGPT</b></li>
+                </ul>
+                <button class="cta-button" onclick="openModal('Avançado')">Escolher Avançado</button>
+            </div>
+            <div class="plan-card" data-aos="fade-up" data-aos-delay="500">
                 <h3 class="plan-name">Personalizado</h3>
-                <p class="plan-price">R$ 299,90*<span> mensal</span></p>
+                <p class="plan-price">R$ 299,90<span> mensal</span></p>
                 <ul class="plan-features">
-			<li>15 Usuários</li>
-			<li>15 Conexões de Whasapp</li>
-                        <li>20 Departamentos</li>
-                        <li>Atendimentos</li>
-                        <li>CRM Kanban</li>
-			<li>Resostas Rápidas</li>
-			<li>Agendamentos Ilimitados</li>
-			<li>Chat Interno</li>
-			<li>Informativos</li>
-			<li><b>Campanhas</b></li>
-			<li><b>Integrações</b></li>
-			<li><b>API OpenAI/ChatGPT</b></li>
-			<li><b>Instalação Personalizada</b></li>
-			<li><b>COM LOGO E CORES DA EMPRESA</b></li>
-			<li><i>*Contrato Anual</i></li>
-                    </ul>
-                    <button class="cta-button" onclick="openModal()">Escolher Personalizado</button>
-                </div>
+                    <li>15 Usuários</li>
+                    <li>15 Conexões de Whasapp</li>
+                    <li>20 Departamentos</li>
+                    <li>Atendimentos</li>
+                    <li>CRM Kanban</li>
+                    <li>Respostas Rápidas</li>
+                    <li>Agendamentos Ilimitados</li>
+                    <li>Chat Interno</li>
+                    <li>Informativos</li>
+                    <li><b>Campanhas</b></li>
+                    <li><b>Integrações</b></li>
+                    <li><b>API OpenAI/ChatGPT</b></li>
+                    <li><b>Instalação Personalizada</b></li>
+                    <li><b>COM LOGO E CORES DA EMPRESA</b></li>
+                </ul>
+                <button class="cta-button" onclick="openModal('Personalizado')">Escolher Personalizado</button>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Final CTA Section -->
     <section class="final-cta">
@@ -882,15 +870,15 @@
 
         // Controle do Modal
         function openModal(planName) {
-            document.getElementById('planName').value = planName;
-            document.getElementById('leadModal').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
+    	document.getElementById('planName').value = planName;
+    	document.getElementById('leadModal').style.display = 'block';
+    	document.body.style.overflow = 'hidden';
+	}
 
         function closeModal() {
-            document.getElementById('leadModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
+    	document.getElementById('leadModal').style.display = 'none';
+    	document.body.style.overflow = 'auto';
+	}
 
         // Máscara para WhatsApp
         document.getElementById('whatsappNumber').addEventListener('input', function(e) {
@@ -906,17 +894,18 @@
 
         // Envio de mensagem para WhatsApp
         function sendWhatsAppMessage(event) {
-            event.preventDefault();
+   	 event.preventDefault();
 
-            const name = document.getElementById('name').value;
-            const whatsappNumber = document.getElementById('whatsappNumber').value;
-            const email = document.getElementById('email').value;
-            const planName = document.getElementById('planName').value;
-            const message = `Olá, sou ${name}, meu whatsapp é o ${whatsappNumber}, e meu e-mail: ${email}. Estou interessado em ${planName}. Aguardo o retorno. Obrigado.`;
+    	const name = document.getElementById('name').value;
+    	const whatsappNumber = document.getElementById('whatsappNumber').value;
+    	const email = document.getElementById('email').value;
+    	const planName = document.getElementById('planName').value;
+    	const message = `Olá, sou ${name}, meu whatsapp é o ${whatsappNumber}, e meu e-mail: ${email}. Estou interessado em ${planName}. Aguardo o retorno. Obrigado.`;
 
-            const whatsappUrl = `https://wa.me/5517991616242?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
-        }
+    	const whatsappUrl = `https://wa.me/5517991616242?text=${encodeURIComponent(message)}`;
+    	window.open(whatsappUrl, '_blank');
+	}
+	    
         // Animação dos números
         function animateNumber(element) {
             const final = parseInt(element.getAttribute('data-value'));
