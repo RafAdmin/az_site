@@ -1,745 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoZapi - Atendimento Inteligente</title>
+    <!-- ... outras meta tags ... -->
     
-    <!-- Fonts e CSS externos -->
+    <!-- CSS externos que já existem -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <style>
-    :root {
-        --primary-color: #25D366;
-        --primary-dark: #128C7E;
-        --primary-light: #DCF8C6;
-        --secondary-color: #34B7F1;
-        --text-color: #333333;
-        --light-bg: #F0F4F8;
-        --white: #FFFFFF;
-        --cream-bg: #FAF9F6;
-        --gradient-primary: linear-gradient(135deg, #25D366, #128C7E);
-        --gradient-secondary: linear-gradient(135deg, #34B7F1, #085373);
-        --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
-        --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
-        --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
-        --border-radius-sm: 8px;
-        --border-radius-md: 12px;
-        --border-radius-lg: 20px;
-    }
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-        line-height: 1.6;
-        color: var(--text-color);
-        background-color: var(--light-bg);
-    }
-
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    /* Estilos para a seção do Logo */
-    .logo-section {
-        background: var(--cream-bg);
-        padding: 20px 0;
-        text-align: center;
-    }
-
-    .logo {
-        max-width: 250px;
-        height: auto;
-    }
-
-    /* Estilos para o Header */
-    header {
-        background: var(--gradient-primary);
-        color: var(--white);
-        padding: 80px 0;
-        text-align: center;
-    }
-
-    .slogan {
-        font-size: 1.8em;
-        margin-bottom: 20px;
-    }
-
-    .impact-phrase {
-        font-size: 3.2em;
-        font-weight: 700;
-        margin-bottom: 40px;
-    }
-
-    .cta-button {
-        display: inline-block;
-        background: var(--primary-color);
-        color: var(--white);
-        padding: 15px 30px;
-        border-radius: var(--border-radius-md);
-        text-decoration: none;
-        font-weight: 600;
-        border: none;
-        cursor: pointer;
-    }
-
-/* Estilos para a seção de Stats */
-.stats-section {
-    background: var(--white);
-    padding: 60px 0;
-    margin-top: -40px;
-}
-
-.stats-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    padding: 20px;
-}
-
-.stat-item {
-    background: var(--white);
-    padding: 30px;
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-lg);
-    text-align: center;
-}
-
-.stat-number {
-    font-size: 3.5em;
-    font-weight: 700;
-    color: var(--primary-dark);
-    margin-bottom: 15px;
-}
-
-.stat-text {
-    font-size: 1.1em;
-    color: var(--text-color);
-}
-
-/* Estilos para a seção de Problemas */
-.problems-section {
-    padding: 80px 0;
-    position: relative;
-    background: linear-gradient(135deg, #f6f9fc 0%, #e9ecef 100%);
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2.5em;
-    color: var(--primary-dark);
-    margin-bottom: 50px;
-    position: relative;
-    padding-bottom: 20px;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 4px;
-    background: var(--gradient-primary);
-    border-radius: 2px;
-}
-
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 20px;
-}
-
-.problem-card {
-    background: var(--white);
-    padding: 30px;
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-md);
-    transition: all var(--transition-fast);
-    text-align: center;
-}
-
-.problem-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
-}
-
-.card-icon {
-    font-size: 2.5em;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    display: block;
-}
-
-.card-title {
-    font-size: 1.3em;
-    color: var(--primary-dark);
-    margin-bottom: 15px;
-}
-
-/* Estilos para a seção de Soluções */
-.solutions-section {
-    padding: 80px 0;
-    position: relative;
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-}
-
-.solution-card {
-    background: var(--white);
-    padding: 30px;
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-md);
-    transition: all var(--transition-fast);
-    text-align: center;
-}
-
-.solution-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
-}
-
-.solution-card .card-icon {
-    font-size: 2.5em;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    display: block;
-}
-
-.solution-card .card-title {
-    font-size: 1.3em;
-    color: var(--primary-dark);
-    margin-bottom: 15px;
-}
-
-.solution-card .card-text {
-    color: var(--text-color);
-    line-height: 1.6;
-}
-
-/* Estilos para a seção de Funcionalidades */
-.features-section {
-    background: var(--gradient-primary);
-    padding: 100px 0;
-    position: relative;
-}
-
-.features-section .section-title {
-    color: var(--white);
-}
-
-.feature-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: var(--border-radius-md);
-    padding: 30px;
-    text-align: center;
-    transition: all var(--transition-fast);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.feature-card:hover {
-    transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.feature-icon {
-    font-size: 3em;
-    color: var(--white);
-    margin-bottom: 20px;
-    display: block;
-}
-
-.features-section .card-title,
-.features-section .card-text {
-    color: var(--white);
-}
-
-/* Estilos para a seção de Planos */
-.plans-section {
-    background: var(--light-bg);
-    padding: 100px 0;
-}
-
-.plan-cards {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 20px;
-    padding: 20px;
-}
-
-.plan-card {
-    background: var(--white);
-    border-radius: var(--border-radius-lg);
-    padding: 30px;
-    text-align: center;
-    transition: all var(--transition-fast);
-    box-shadow: var(--shadow-md);
-    position: relative;
-    min-width: 300px;
-    scroll-snap-align: start;
-}
-
-.plan-card.popular {
-    border: 2px solid var(--primary-color);
-    box-shadow: var(--shadow-lg);
-}
-
-.plan-name {
-    font-size: 1.5em;
-    color: var(--primary-dark);
-    margin-bottom: 10px;
-}
-
-.plan-price {
-    font-size: 2em;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.plan-features {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-}
-
-.plan-features li {
-    margin-bottom: 10px;
-    font-size: 1em;
-}
-
-.plan-features li b {
-    color: var(--primary-dark);
-}
-
-/* Estilos para o Modal */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 1000;
-    backdrop-filter: blur(5px);
-}
-
-.modal-content {
-    position: relative;
-    background: var(--white);
-    width: 90%;
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 30px;
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-lg);
-    animation: modalSlideIn 0.3s ease-out;
-}
-
-@keyframes modalSlideIn {
-    from {
-        transform: translateY(-100px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.close-modal {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 1.5em;
-    cursor: pointer;
-    color: var(--text-color);
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: var(--text-color);
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: var(--border-radius-sm);
-    font-size: 1em;
-}
-
-/* Estilos para a seção final de CTA */
-.final-cta {
-    background: var(--gradient-secondary);
-    padding: 80px 0;
-    text-align: center;
-    color: var(--white);
-}
-
-.final-cta h2 {
-    font-size: 2.5em;
-    margin-bottom: 30px;
-}
-
-.final-cta p {
-    font-size: 1.2em;
-    margin-bottom: 40px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.form-group input.invalid {
-    border-color: #ff4444;
-}
-
-.error-message {
-    color: #ff4444;
-    font-size: 0.8em;
-    margin-top: 5px;
-    display: none;
-}
-
-/* Estilos para a seção de Depoimentos */
-.testimonials-section {
-    padding: 80px 0;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-}
-
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 20px;
-}
-
-.testimonial-card {
-    background: var(--white);
-    border-radius: var(--border-radius-md);
-    padding: 30px;
-    box-shadow: var(--shadow-md);
-    transition: transform 0.3s ease;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-10px);
-}
-
-.testimonial-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.testimonial-avatar {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-right: 15px;
-    object-fit: cover;
-}
-
-.testimonial-info {
-    flex: 1;
-}
-
-.testimonial-name {
-    font-weight: 600;
-    color: var(--primary-dark);
-    margin-bottom: 5px;
-}
-
-.testimonial-position {
-    font-size: 0.9em;
-    color: #666;
-}
-
-.testimonial-stars {
-    color: #ffd700;
-    margin-bottom: 15px;
-}
-
-.testimonial-text {
-    font-style: italic;
-    line-height: 1.6;
-    color: var(--text-color);
-}
-
-.testimonial-avatar {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-right: 15px;
-    object-fit: cover;
-    border: 3px solid var(--primary-color);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-/* Estilos para a seção FAQ */
-.faq-section {
-    padding: 80px 0;
-    background: var(--light-bg);
-}
-
-.faq-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.faq-item {
-    background: var(--white);
-    border-radius: var(--border-radius-md);
-    margin-bottom: 15px;
-    box-shadow: var(--shadow-sm);
-    overflow: hidden;
-}
-
-.faq-question {
-    padding: 20px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 600;
-    color: var(--primary-dark);
-    transition: all 0.3s ease;
-}
-
-.faq-question:hover {
-    background: rgba(0, 0, 0, 0.02);
-}
-
-.faq-question i {
-    transition: transform 0.3s ease;
-}
-
-.faq-answer {
-    padding: 0 20px;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    line-height: 1.6;
-}
-
-.faq-item.active .faq-question {
-    background: var(--primary-color);
-    color: var(--white);
-}
-
-.faq-item.active .faq-question i {
-    transform: rotate(180deg);
-}
-
-.faq-item.active .faq-answer {
-    padding: 20px;
-    max-height: 500px;
-}
-
-/* INÍCIO STATS SECTION STYLES - DESATIVADO
-.stats-section {
-    background: var(--gradient-primary);
-    padding: 80px 0;
-    color: var(--white);
-    position: relative;
-    overflow: hidden;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    text-align: center;
-}
-
-.stat-item {
-    padding: 20px;
-    position: relative;
-}
-
-.stat-number {
-    font-size: 3em;
-    font-weight: 700;
-    margin-bottom: 10px;
-    background: linear-gradient(135deg, #fff 0%, #e6e6e6 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.stat-label {
-    font-size: 1.1em;
-    opacity: 0.9;
-}
-
-.stat-icon {
-    font-size: 2em;
-    margin-bottom: 15px;
-    opacity: 0.9;
-}
-
-@keyframes countUp {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-/* FIM STATS SECTION STYLES - DESATIVADO */
-
-/* Footer Styles */
-.footer {
-    background: var(--gradient-primary);
-    color: var(--white);
-    padding: 60px 0 20px;
-    position: relative;
-    overflow: hidden;
-}
-
-.footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-.footer-column h3 {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.footer-column h3::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 2px;
-    background: var(--white);
-    opacity: 0.5;
-}
-
-.footer-links {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-links li {
-    margin-bottom: 12px;
-}
-
-.footer-links a {
-    color: var(--white);
-    text-decoration: none;
-    opacity: 0.8;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.footer-links a:hover {
-    opacity: 1;
-    transform: translateX(5px);
-}
-
-.social-links {
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.social-links a {
-    color: var(--white);
-    text-decoration: none;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255,255,255,0.1);
-    transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-    background: var(--white);
-    color: var(--primary-color);
-    transform: translateY(-3px);
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 0.9em;
-    opacity: 0.8;
-}
-
-.footer-logo {
-    max-width: 180px;
-    margin-bottom: 20px;
-    filter: brightness(0) invert(1);
-}
-
-@media (max-width: 768px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .footer-column h3::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .footer-links a {
-        justify-content: center;
-    }
-
-    .social-links {
-        justify-content: center;
-    }
-}
-
-    </style>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+    <!-- Seu CSS personalizado -->
+    <link rel="stylesheet" href="styles.css">
 </head>
+ 
 <body>
     
 	<!-- Logo Section -->
@@ -756,9 +29,10 @@
             <h1 class="impact-phrase">
                 Revolucione seus atendimentos, surpreenda seus clientes e veja seu faturamento decolar!
             </h1>
-            <button class="cta-button">
-                Comece Agora - Teste Grátis
-            </button>
+            <button class="cta-button" id="header-cta">
+    		Comece Agora - Teste Grátis
+	    </button>
+
         </div>
     </header>
 
@@ -901,78 +175,133 @@
 </section>
 
 <!-- Plans Section -->
-<section class="plans-section">
+<section class="plans-section" id="plans">
     <div class="container">
         <h2 class="section-title" data-aos="fade-up">Escolha o Plano Ideal</h2>
         <div class="plan-cards">
+            <!-- Plano Teste -->
             <div class="plan-card" data-aos="fade-up" data-aos-delay="100">
-                <h3 class="plan-name">Teste 4 dias Grátis</h3>
-                <p class="plan-price">R$ 0,00<span> Gratuito</span></p>
-                <ul class="plan-features">
-                    <li>2 Usuários</li>
-                    <li>2 Conexões de WhatsApp</li>
-                    <li>4 dias de acesso gratuito</li>
-                    <li>Todos os recursos ativos</li>
-                </ul>
-                <button class="cta-button" onclick="openModal('Teste 4 dias grátis')">Quero Teste Grátis</button>
+                <div class="plan-header">
+                    <h3 class="plan-name">Teste 4 dias Grátis</h3>
+                    <p class="plan-price">R$ 0,00<span>/grátis</span></p>
+                </div>
+                <div class="plan-content">
+                    <div class="plan-main-features">
+                        <p class="feature-highlight">2 Usuários</p>
+                        <p class="feature-highlight">2 Conexões de WhatsApp</p>
+                        <p class="feature-highlight">4 dias de acesso</p>
+                    </div>
+                    <div class="plan-features-list">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Todos os recursos ativos</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="plan-footer">
+                    <button class="cta-button" onclick="openModal('Teste 4 dias grátis')">Começar Teste Grátis</button>
+                </div>
             </div>
-            
+
+            <!-- Plano Iniciante -->
             <div class="plan-card popular" data-aos="fade-up" data-aos-delay="200">
-                <h3 class="plan-name">Iniciante</h3>
-                <p class="plan-price">R$ 49,90<span>/mensal</span></p>
-                <ul class="plan-features">
-                    <li>2 Usuários</li>
-                    <li>2 Conexões de WhatsApp</li>
-                    <li>5 Departamentos</li>
-                    <li>Atendimentos</li>
-                    <li>CRM Kanban</li>
-                    <li>Respostas Rápidas</li>
-                    <li>Agendamentos Ilimitados</li>
-                    <li>Chat Interno</li>
-                    <li>Informativos</li>
-                </ul>
-                <button class="cta-button" onclick="openModal('Iniciante')">Escolher Iniciante</button>
+                <div class="plan-header">
+                    <h3 class="plan-name">Iniciante</h3>
+                    <p class="plan-price">R$ 49,90<span>/mensal</span></p>
+                </div>
+                <div class="plan-content">
+                    <div class="plan-main-features">
+                        <p class="feature-highlight">2 Usuários</p>
+                        <p class="feature-highlight">2 Conexões</p>
+                        <p class="feature-highlight">5 Departamentos</p>
+                    </div>
+                    <div class="plan-features-list">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Atendimentos</li>
+                            <li><i class="fas fa-check"></i> CRM Kanban</li>
+                            <li><i class="fas fa-check"></i> Respostas Rápidas</li>
+                            <li><i class="fas fa-check"></i> Agendamentos Ilimitados</li>
+                            <li><i class="fas fa-check"></i> Chat Interno</li>
+                            <li><i class="fas fa-check"></i> Informativos</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="plan-footer">
+                    <button class="cta-button" onclick="openModal('Iniciante')">Escolher Iniciante</button>
+                </div>
             </div>
 
+            <!-- Plano Intermediário -->
             <div class="plan-card" data-aos="fade-up" data-aos-delay="300">
-                <h3 class="plan-name">Intermediário</h3>
-                <p class="plan-price">R$ 99,90<span>/mensal</span></p>
-                <ul class="plan-features">
-                    <li>5 Usuários</li>
-                    <li>5 Conexões de WhatsApp</li>
-                    <li>10 Departamentos</li>
-		    <li>Todos recursos do Plano Básico</li>
-                    <li><b>+Campanhas</b></li>
-                    <li><b>+Integrações</b></li>
-                </ul>
-                <button class="cta-button" onclick="openModal('Intermediário')">Escolher Intermediário</button>
+                <div class="plan-header">
+                    <h3 class="plan-name">Intermediário</h3>
+                    <p class="plan-price">R$ 99,90<span>/mensal</span></p>
+                </div>
+                <div class="plan-content">
+                    <div class="plan-main-features">
+                        <p class="feature-highlight">5 Usuários</p>
+                        <p class="feature-highlight">5 Conexões</p>
+                        <p class="feature-highlight">10 Departamentos</p>
+                    </div>
+                    <div class="plan-features-list">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Todos recursos do Plano Básico</li>
+                            <li><i class="fas fa-plus"></i> Campanhas</li>
+                            <li><i class="fas fa-plus"></i> Integrações</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="plan-footer">
+                    <button class="cta-button" onclick="openModal('Intermediário')">Escolher Intermediário</button>
+                </div>
             </div>
 
+            <!-- Plano Avançado -->
             <div class="plan-card" data-aos="fade-up" data-aos-delay="400">
-                <h3 class="plan-name">Avançado</h3>
-                <p class="plan-price">R$ 149,90<span>/mensal</span></p>
-                <ul class="plan-features">
-                    <li>10 Usuários</li>
-                    <li>10 Conexões de WhatsApp</li>
-                    <li>15 Departamentos</li>
-                    <li>Todos recursos do plano Intermediário</li>
-                    <li><b>+API OpenAI/ChatGPT</b></li>
-                </ul>
-                <button class="cta-button" onclick="openModal('Avançado')">Escolher Avançado</button>
+                <div class="plan-header">
+                    <h3 class="plan-name">Avançado</h3>
+                    <p class="plan-price">R$ 149,90<span>/mensal</span></p>
+                </div>
+                <div class="plan-content">
+                    <div class="plan-main-features">
+                        <p class="feature-highlight">10 Usuários</p>
+                        <p class="feature-highlight">10 Conexões</p>
+                        <p class="feature-highlight">15 Departamentos</p>
+                    </div>
+                    <div class="plan-features-list">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Todos recursos do plano Intermediário</li>
+                            <li><i class="fas fa-plus"></i> API OpenAI/ChatGPT</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="plan-footer">
+                    <button class="cta-button" onclick="openModal('Avançado')">Escolher Avançado</button>
+                </div>
             </div>
 
+            <!-- Plano Personalizado -->
             <div class="plan-card" data-aos="fade-up" data-aos-delay="500">
-                <h3 class="plan-name">Personalizado</h3>
-                <p class="plan-price">R$ 299,90<span>/mensal</span></p>
-                <ul class="plan-features">
-                    <li>15 Usuários</li>
-                    <li>15 Conexões de WhatsApp</li>
-                    <li>20 Departamentos</li>
-                    <li>Todos recursos do plano Avançado</li>
-                    <li><b>Instalação Personalizada</b></li>
-                    <li><b>COM LOGO E CORES DA EMPRESA</b></li>
-                </ul>
-                <button class="cta-button" onclick="openModal('Personalizado')">Escolher Personalizado</button>
+                <div class="plan-header">
+                    <h3 class="plan-name">Personalizado</h3>
+                    <p class="plan-price">R$ 299,90<span>/mensal</span></p>
+                </div>
+                <div class="plan-content">
+                    <div class="plan-main-features">
+                        <p class="feature-highlight">15 Usuários</p>
+                        <p class="feature-highlight">15 Conexões</p>
+                        <p class="feature-highlight">20 Departamentos</p>
+                    </div>
+                    <div class="plan-features-list">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Todos recursos do plano Avançado</li>
+                            <li><i class="fas fa-plus"></i> Instalação Personalizada</li>
+                            <li><i class="fas fa-plus"></i> Logo e Cores da Empresa</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="plan-footer">
+                    <button class="cta-button" onclick="openModal('Personalizado')">Escolher Personalizado</button>
+                </div>
             </div>
         </div>
     </div>
@@ -1115,12 +444,12 @@ FIM STATS SECTION - DESATIVADO -->
 <!-- Final CTA Section -->
 <section class="final-cta">
     <div class="container">
-        <h2 data-aos="fade-up">Comece Agora Mesmo!</h2>
+        <h2 data-aos="fade-up">Pronto para revolucionar seu atendimento?</h2>
         <p data-aos="fade-up" data-aos-delay="100">
-            Não perca mais tempo e vendas. Automatize seu atendimento e veja seus resultados crescerem!
+            Comece agora mesmo com 4 dias gratuitos e descubra como o AutoZapi pode transformar sua empresa
         </p>
-        <button class="cta-button" data-aos="fade-up" data-aos-delay="200" onclick="openModal('CTA Final')">
-            Começar Agora - Teste Grátis
+        <button class="cta-button" id="final-cta" data-aos="fade-up" data-aos-delay="200">
+            Começar Teste Grátis
         </button>
     </div>
 </section>
@@ -1130,7 +459,7 @@ FIM STATS SECTION - DESATIVADO -->
     <div class="container">
         <div class="footer-grid">
             <div class="footer-column" data-aos="fade-up">
-                <img src="logo.png" alt="AutoZapi Logo" class="footer-logo">
+                <img src="footer-logo.png" alt="AutoZapi Logo" class="footer-logo">
                 <p>Revolucione seu atendimento com a melhor plataforma de automação para WhatsApp do mercado.</p>
                 <div class="social-links">
                     <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -1161,16 +490,15 @@ FIM STATS SECTION - DESATIVADO -->
                     <li><a href="#"><i class="fas fa-shield-alt"></i> Política de Privacidade</a></li>
                 </ul>
             </div>
-
             <div class="footer-column" data-aos="fade-up" data-aos-delay="300">
                 <h3>Newsletter</h3>
                 <p>Receba novidades e atualizações diretamente no seu e-mail.</p>
                 <form class="newsletter-form" id="newsletterForm">
-	    <div class="form-group">
-	        <input type="email" name="email" placeholder="Seu e-mail" required>
-	        <button type="submit" class="cta-button">Inscrever</button>
-	    </div>
-		</form>
+    	   <div class="form-group">
+        	<input type="email" name="email" placeholder="Seu melhor e-mail" required>
+        	<button type="submit" class="cta-button">Inscrever</button>
+    	   </div>
+</form>
             </div>
         </div>
 
@@ -1180,58 +508,6 @@ FIM STATS SECTION - DESATIVADO -->
         </div>
     </div>
 </footer>
-
-<script>
-    // Inicialização do AOS
-    document.addEventListener('DOMContentLoaded', function() {
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
-    });
-
-    // Animação dos números
-    function animateNumber(element) {
-        const final = parseInt(element.getAttribute('data-value'));
-        let current = 0;
-        const increment = Math.ceil(final / 50);
-
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= final) {
-                current = final;
-                clearInterval(timer);
-                if (element.nextElementSibling.textContent.includes('dos')) {
-                    element.textContent = `${current}%`;
-                } else {
-                    element.textContent = current;
-                }
-            } else {
-                element.textContent = current;
-            }
-        }, 30);
-    }
-
-    // Configuração do Observer
-    const numberObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateNumber(entry.target);
-                numberObserver.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.5
-    });
-
-    // Inicialização quando o DOM estiver pronto
-    document.addEventListener('DOMContentLoaded', function() {
-        document.querySelectorAll('.stat-number').forEach(number => {
-            numberObserver.observe(number);
-        });
-    });
-</script>
 
 <!-- Modal -->
 <div id="leadModal" class="modal">
@@ -1261,163 +537,9 @@ FIM STATS SECTION - DESATIVADO -->
     </div>
 </div>
 
-<script>
-    // Funções do Modal
-    function openModal(plan) {
-        document.getElementById('leadModal').style.display = 'block';
-        document.getElementById('plan').value = plan;
-    }
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    function closeModal() {
-        document.getElementById('leadModal').style.display = 'none';
-    }
-
-    // Fechar modal ao clicar fora
-    window.onclick = function(event) {
-        if (event.target == document.getElementById('leadModal')) {
-            closeModal();
-        }
-    }
-
-    // Envio do formulário
-    function submitForm(event) {
-    event.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const whatsapp = document.getElementById('whatsapp').value;
-    const plan = document.getElementById('plan').value;
-    
-    // Número do WhatsApp que receberá as mensagens (substitua pelo número correto)
-    const adminWhatsapp = "5517991616242"; // Substitua pelo seu número
-    
-    // Formata a mensagem como um "card"
-    const message = `🚀 *Novo Contato do Site Autozapi*
-----------------------------------------------
-👤 *Olá! Eu sou* ${name}
-📧 *Este é meu e-mail:* ${email}
-📱 *E este é meu WhatsApp:* ${whatsapp}
-📋 *Estou interssado no plano:* ${plan}
-💡 *Aguardarei seus contato. Obrigado!*
-----------------------------------------------
- *Origem:* Site AutoZapi`;
-
-    // Codifica a mensagem para URL
-    const encodedMessage = encodeURIComponent(message);
-    
-    // Cria o link do WhatsApp
-    const whatsappLink = `https://api.whatsapp.com/send?phone=${adminWhatsapp}&text=${encodedMessage}`;
-    
-    // Limpa o formulário e fecha o modal
-    event.target.reset();
-    closeModal();
-    
-    // Abre o WhatsApp em uma nova aba
-    window.open(whatsappLink, '_blank');
-}
-</script>
-
-<script>
-    // Máscara para o campo de telefone
-    document.getElementById('whatsapp').addEventListener('input', function (e) {
-        let x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,5})(\d{0,4})/);
-        e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
-    });
-</script>
-
-<script>
-// FAQ Toggle
-document.querySelectorAll('.faq-question').forEach(question => {
-    question.addEventListener('click', () => {
-        const faqItem = question.parentElement;
-        const isActive = faqItem.classList.contains('active');
-        
-        // Fecha todos os itens
-        document.querySelectorAll('.faq-item').forEach(item => {
-            item.classList.remove('active');
-        });
-        
-        // Abre o item clicado se não estava ativo
-        if (!isActive) {
-            faqItem.classList.add('active');
-        }
-    });
-});
-
-
-/* INÍCIO STATS SECTION SCRIPTS - DESATIVADO
-const countUpAnimation = () => {
-    const numbers = document.querySelectorAll('.stat-number');
-    
-    numbers.forEach(number => {
-        const target = parseInt(number.getAttribute('data-target'));
-        const duration = 2000;
-        const increment = target / (duration / 16);
-        let current = 0;
-
-        const updateNumber = () => {
-            if (current < target) {
-                current = Math.min(current + increment, target);
-                number.textContent = Math.round(current).toLocaleString();
-                requestAnimationFrame(updateNumber);
-            }
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-                updateNumber();
-                observer.disconnect();
-            }
-        });
-
-        observer.observe(number);
-    });
-};
-
-document.addEventListener('DOMContentLoaded', countUpAnimation);
-FIM STATS SECTION SCRIPTS - DESATIVADO */
-
-<script>
-document.getElementById('newsletterForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const form = this;
-    const submitButton = form.querySelector('button[type="submit"]');
-    const originalButtonText = submitButton.textContent;
-    
-    // Desabilita o botão durante o envio
-    submitButton.disabled = true;
-    submitButton.textContent = 'Enviando...';
-    
-    const formData = new FormData();
-    formData.append('email', form.querySelector('input[name="email"]').value);
-
-    fetch('newsletter.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert('Inscrição realizada com sucesso! Verifique seu email.');
-            form.reset();
-        } else {
-            alert(data.message || 'Erro ao processar inscrição. Tente novamente.');
-        }
-    })
-    .catch(error => {
-        alert('Erro ao processar inscrição. Tente novamente.');
-        console.error('Erro:', error);
-    })
-    .finally(() => {
-        // Reativa o botão após o processamento
-        submitButton.disabled = false;
-        submitButton.textContent = originalButtonText;
-    });
-});
-</script>
-
-</script>
+<script src="scripts.js"></script>
 
 </body>
 </html>
