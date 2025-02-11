@@ -26,22 +26,74 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Funções do Modal
-    function openModal(plan) {
-        document.getElementById('leadModal').style.display = 'block';
-        document.getElementById('plan').value = plan;
+    // Configuração dos CTAs dos planos
+    const planButtons = document.querySelectorAll('.plan-card button');
+    planButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const plan = this.getAttribute('onclick').match(/openModal\('(.+?)'\)/)[1];
+            openModal(plan);
+        });
+    });
+
+    // Animação dos números
+    function animateNumber(element) {
+        const final = parseInt(element.getAttribute('data-value'));
+        let current = 0;
+        const increment = Math.ceil(final / 50);
+
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= final) {
+                current = final;
+                clearInterval(timer);
+                if (element.nextElementSibling.textContent.includes('dos')) {
+                    element.textContent = `${current}%`;
+                } else {
+                    element.textContent = current;
+                }
+            } else {
+                element.textContent = current;
+            }
+        }, 30);
     }
 
-    function closeModal() {
+    // Configuração do Observer
+    const numberObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateNumber(entry.target);
+                numberObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    document.querySelectorAll('.stat-number').forEach(number => {
+        numberObserver.observe(number);
+    });
+
+    // Funções do Modal
+    window.openModal = function(plan) {
+        document.getElementById('leadModal').style.display = 'block';
+        document.getElementById('plan').value = plan;
+    };
+
+    window.closeModal = function() {
         document.getElementById('leadModal').style.display = 'none';
-    }
+    };
 
     // Fechar modal ao clicar fora
     window.onclick = function(event) {
         if (event.target == document.getElementById('leadModal')) {
             closeModal();
         }
-    }
+    };
+
+    // Fechar modal ao clicar no X superior direito
+    document.querySelector('.close-modal').addEventListener('click', function() {
+        closeModal();
+    });
 
     // Envio do formulário
     document.getElementById('leadForm').addEventListener('submit', function(event) {
