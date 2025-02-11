@@ -1,14 +1,13 @@
 // scripts.js
 
-	// Inicialização do AOS
-	document.addEventListener('DOMContentLoaded', function() {
-    	// Inicializa o AOS
-   	AOS.init({
+// Inicialização do AOS
+document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({
         duration: 1000,
         once: true,
         offset: 100
     });
-    
+
     // Configurações dos CTAs
     const headerCTA = document.getElementById('header-cta');
     if (headerCTA) {
@@ -101,11 +100,11 @@
     // Formata a mensagem como um "card"
     const message = `🚀 *Novo Contato do Site Autozapi*
 ---------------------------------------------------
-👤 *Olá! Eu sou* ${name}
-📧 *Este é meu e-mail:* ${email}
-📱 *E este é meu WhatsApp:* ${whatsapp}
-📋 *Estou interssado no plano:* ${plan}
-💡 *Aguardarei o contato do Especialita. Obrigado!*
+👤 Olá! Sou *${name}*
+📧 Este é meu e-mail: *${email}*
+📱 E este é meu WhatsApp: *${whatsapp}*
+📋 Estou interssado no plano: *${plan}*
+💡 Aguardarei o contato do Especialita. Obrigado!
 ---------------------------------------------------
  *Origem:* Site AutoZapi`;
 
@@ -122,8 +121,6 @@
     // Abre o WhatsApp em uma nova aba
     window.open(whatsappLink, '_blank');
 }
-
-
 
     // Máscara para o campo de telefone
     document.getElementById('whatsapp').addEventListener('input', function (e) {
