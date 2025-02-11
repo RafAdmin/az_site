@@ -1,1043 +1,545 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ... outras meta tags ... -->
     
-    <!-- Favicons e ícones para diferentes plataformas -->
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    
-    <!-- Meta tags otimizadas para SEO -->
-    <title>AutoZapi - Sistema Profissional de Multi-Atendimento via WhatsApp</title>
-    <meta name="description" content="AutoZapi - Revolucione seu atendimento no WhatsApp com multiconexões, CRM integrado e chatbot com IA. Aumente suas vendas em até 300%. Teste grátis por 4 dias!">
-    <meta name="keywords" content="AutoZapi, WhatsApp Business, Multi-atendimento WhatsApp, CRM WhatsApp, Chatbot IA, Automação WhatsApp, Sistema de Atendimento">
-    <meta name="author" content="AutoZapi">
-    
-    <!-- Meta tags para redes sociais -->
-    <meta property="og:title" content="AutoZapi - Sistema Profissional de Multi-Atendimento via WhatsApp">
-    <meta property="og:description" content="Revolucione seu atendimento no WhatsApp com multiconexões, CRM integrado e chatbot com IA. Aumente suas vendas em até 300%!">
-    <meta property="og:image" content="https://www.autozapi.com/og-image.png">
-    <meta property="og:url" content="https://www.autozapi.com">
-    <meta name="twitter:card" content="summary_large_image">
-    
-    <!-- Meta tags adicionais -->
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#25D366">
-    <link rel="canonical" href="https://www.autozapi.com">
-    
-    <!-- Preload de recursos críticos -->
-    <link rel="preload" href="logo.png" as="image">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style">
-    
-    <!-- Fonts e CSS externos (mantidos do original) -->
+    <!-- CSS externos que já existem -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-    <!-- Seção de Planos Otimizada -->
-<section class="plans-section">
-    <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Escolha o Plano Ideal</h2>
-        <div class="special-offer" data-aos="fade-up">
-            <div class="countdown-wrapper">
-                <p class="offer-text">Oferta Especial - Preços Promocionais</p>
-                <div class="countdown" id="countdown">
-                    <div class="countdown-item">
-                        <span id="hours">23</span>
-                        <span class="label">Horas</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span id="minutes">59</span>
-                        <span class="label">Minutos</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span id="seconds">59</span>
-                        <span class="label">Segundos</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="plan-cards">
-            <div class="plan-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="plan-badge">TESTE GRÁTIS</div>
-                <h3 class="plan-name">Teste 4 dias grátis</h3>
-                <p class="plan-price">R$ 49,90<span class="period"> mensal</span></p>
-                <div class="savings-tag">Teste sem compromisso</div>
-                <ul class="plan-features">
-                    <li><i class="fas fa-check"></i> 2 Usuários</li>
-                    <li><i class="fas fa-check"></i> 2 Conexões de WhatsApp</li>
-                    <li><i class="fas fa-check"></i> 4 dias de acesso gratuito</li>
-                    <li><i class="fas fa-check"></i> Todos os recursos ativos</li>
-                </ul>
-                <button class="cta-button pulse-animation" onclick="openModal('Teste 4 dias grátis')">
-                    Começar Teste Grátis
-                    <i class="fas fa-arrow-right"></i>
-                </button>
-            </div>
-
-            <div class="plan-card popular" data-aos="fade-up" data-aos-delay="200">
-                <div class="plan-badge">MAIS POPULAR</div>
-                <h3 class="plan-name">Iniciante</h3>
-                <p class="plan-price">
-                    <span class="original-price">R$ 99,90</span>
-                    R$ 49,90<span class="period"> mensal</span>
-                </p>
-                <div class="savings-tag">Economize 50%</div>
-                <ul class="plan-features">
-                    <li><i class="fas fa-check"></i> 2 Usuários</li>
-                    <li><i class="fas fa-check"></i> 2 Conexões de WhatsApp</li>
-                    <li><i class="fas fa-check"></i> 5 Departamentos</li>
-                    <li><i class="fas fa-check"></i> Atendimentos</li>
-                    <li><i class="fas fa-check"></i> CRM Kanban</li>
-                    <li><i class="fas fa-check"></i> Respostas Rápidas</li>
-                    <li><i class="fas fa-check"></i> Agendamentos Ilimitados</li>
-                    <li><i class="fas fa-check"></i> Chat Interno</li>
-                    <li><i class="fas fa-check"></i> Informativos</li>
-                </ul>
-                <button class="cta-button pulse-animation" onclick="openModal('Iniciante')">
-                    Escolher Iniciante
-                    <i class="fas fa-arrow-right"></i>
-                </button>
-                <div class="guarantee-badge">
-                    <i class="fas fa-shield-alt"></i>
-                    Garantia de 7 dias
-                </div>
-            </div>
-
-            <!-- Adicione estilos similares para os outros planos -->
-        </div>
-    </div>
-</section>
-
-<!-- Adicione este CSS ao seu arquivo de estilos -->
-<style>
+    
+    <!-- Seu CSS personalizado -->
+    <link rel="stylesheet" href="styles.css">
+</head>
  
-.trust-indicators {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
-    flex-wrap: wrap;
-}
+<body>
+    
+	<!-- Logo Section -->
+   	<section class="logo-section">
+        <div class="container">
+            <img src="logo.png" alt="AutoZapi Logo" class="logo">
+        </div>
+    </section>
 
-.trust-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 10px 20px;
-    border-radius: var(--border-radius-sm);
-    backdrop-filter: blur(5px);
-}
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <p class="slogan">Multi-Atendimento via WhatsApp</p>
+            <h1 class="impact-phrase">
+                Revolucione seus atendimentos, surpreenda seus clientes e veja seu faturamento decolar!
+            </h1>
+            <button class="cta-button" id="header-cta">
+    		Comece Agora - Teste Grátis
+	    </button>
 
-.trust-item img {
-    height: 24px;
-    width: auto;
-    filter: brightness(0) invert(1); /* Faz os ícones ficarem brancos */
-}
+        </div>
+    </header>
 
-.trust-item span {
-    color: white;
-    font-size: 0.9em;
-    font-weight: 500;
-}
-.special-offer {
-    background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
-    border-radius: var(--border-radius-md);
-    padding: 20px;
-    margin-bottom: 40px;
-    color: white;
-    text-align: center;
-}
-
-.countdown-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.offer-text {
-    font-size: 1.2em;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-.countdown {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-}
-
-.countdown-item {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 10px 15px;
-    border-radius: var(--border-radius-sm);
-    text-align: center;
-}
-
-.countdown-item span {
-    display: block;
-}
-
-.countdown-item .label {
-    font-size: 0.8em;
-    opacity: 0.9;
-}
-
-.plan-card {
-    position: relative;
-    border: 2px solid transparent;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.plan-card.popular {
-    border-color: var(--primary-color);
-    transform: scale(1.05);
-}
-
-.plan-badge {
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--primary-color);
-    color: white;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.8em;
-    font-weight: 600;
-}
-
-.original-price {
-    text-decoration: line-through;
-    color: #999;
-    font-size: 0.8em;
-    display: block;
-}
-
-.savings-tag {
-    background: #ff6b6b;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-size: 0.8em;
-    margin: 10px 0;
-}
-
-.guarantee-badge {
-    margin-top: 15px;
-    color: var(--primary-color);
-    font-size: 0.9em;
-}
-
-.plan-features li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.plan-features i {
-    color: var(--primary-color);
-}
-
-.pulse-animation {
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
-    }
-    70% {
-        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-    }
-}
-
-/* Adicione este JavaScript ao final do seu arquivo, antes do </body> */
-<script>
-// Contador regressivo
-function updateCountdown() {
-    const now = new Date();
-    const midnight = new Date();
-    midnight.setHours(23, 59, 59);
-
-    const diff = midnight - now;
-    const hours = Math.floor(diff / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-    document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-    document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-    document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-}
-
-setInterval(updateCountdown, 1000);
-updateCountdown();
-</script>
-</style>
-<!-- Seção de Depoimentos -->
-<section class="testimonials-section">
+<!-- Stats Section -->
+<section class="stats-section">
     <div class="container">
-        <h2 class="section-title" data-aos="fade-up">O que nossos clientes dizem</h2>
-        <div class="testimonials-grid">
-            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="testimonial-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <div class="testimonial-content">
-                    <p>"Depois que implementamos o AutoZapi, nossas vendas aumentaram em 280%. O atendimento ficou muito mais rápido e profissional!"</p>
-                </div>
-                <div class="testimonial-author">
-                    <img src="avatar1.png" alt="Maria Silva" class="author-avatar">
-                    <div class="author-info">
-                        <h4>Maria Silva</h4>
-                        <p>Loja Virtual MModa</p>
-                    </div>
-                </div>
+        <div class="stats-container">
+            <div class="stat-item" data-aos="fade-up">
+                <div class="stat-number" data-value="148">0</div>
+                <p class="stat-text">Milhões de usuários do WhatsApp no Brasil</p>
             </div>
-
-            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="testimonial-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <div class="testimonial-content">
-                    <p>"O chatbot com IA é fantástico! Conseguimos atender 24/7 e nossos clientes adoraram. Vale cada centavo investido!"</p>
-                </div>
-                <div class="testimonial-author">
-                    <img src="avatar2.png" alt="João Santos" class="author-avatar">
-                    <div class="author-info">
-                        <h4>João Santos</h4>
-                        <p>Imobiliária Santos</p>
-                    </div>
-                </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-number" data-value="80">0</div>
+                <p class="stat-text">dos brasileiros usam WhatsApp diariamente</p>
             </div>
-
-            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="testimonial-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <div class="testimonial-content">
-                    <p>"A organização que o CRM trouxe para nossa empresa é impressionante. Aumentamos nossa taxa de conversão em 200%!"</p>
-                </div>
-                <div class="testimonial-author">
-                    <img src="avatar3.png" alt="Ana Oliveira" class="author-avatar">
-                    <div class="author-info">
-                        <h4>Ana Oliveira</h4>
-                        <p>Escola de Idiomas</p>
-                    </div>
-                </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="stat-number" data-value="76">0</div>
+                <p class="stat-text">das empresas já vendem pelo WhatsApp</p>
             </div>
         </div>
+        <center><i>Fonte: www.aisensy.com</i></center>
+    </div>
+</section>
 
-        <div class="testimonials-stats" data-aos="fade-up">
-            <div class="stat-item">
-                <span class="stat-number">4.9</span>
-                <p>Avaliação média</p>
-                <div class="stars">★★★★★</div>
+<!-- Problems Section -->
+<section class="problems-section">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Principais Desafios das Empresas</h2>
+        <div class="card-grid">
+            <div class="problem-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="card-icon fas fa-exclamation-triangle"></i>
+                <h3 class="card-title">Perda de Leads</h3>
+                <p class="card-text">47% dos negócios perdem vendas por não responderem mensagens em até 24 horas.</p>
             </div>
-            <div class="stat-item">
-                <span class="stat-number">1000+</span>
-                <p>Clientes ativos</p>
+            <div class="problem-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="card-icon fas fa-clock"></i>
+                <h3 class="card-title">Tempo de Resposta Alto</h3>
+                <p class="card-text">Atendimento manual consome 60% do tempo das equipes, reduzindo produtividade.</p>
             </div>
-            <div class="stat-item">
-                <span class="stat-number">98%</span>
-                <p>Satisfação</p>
+            <div class="problem-card" data-aos="fade-up" data-aos-delay="300">
+                <i class="card-icon fas fa-random"></i>
+                <h3 class="card-title">Desorganização</h3>
+                <p class="card-text">Leads desorganizados em planilhas ou sistemas desconexos geram oportunidades perdidas.</p>
+            </div>
+            <div class="problem-card" data-aos="fade-up" data-aos-delay="400">
+                <i class="card-icon fas fa-chart-line"></i>
+                <h3 class="card-title">Baixa Conversão</h3>
+                <p class="card-text">Falta de acompanhamento adequado resulta em taxas de conversão abaixo de 5%.</p>
+            </div>
+            <div class="problem-card" data-aos="fade-up" data-aos-delay="500">
+                <i class="card-icon fas fa-users"></i>
+                <h3 class="card-title">Dificuldade em Escalar</h3>
+                <p class="card-text">Empresas enfrentam gargalos para gerenciar múltiplas contas e equipes.</p>
+            </div>
+            <div class="problem-card" data-aos="fade-up" data-aos-delay="600">
+                <i class="card-icon fas fa-face-sad-tear"></i>
+                <h3 class="card-title">Atendimento Genérico</h3>
+                <p class="card-text">Clientes se sentem desvalorizados quando recebem respostas genéricas.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Features Section Melhorada -->
+<!-- Solutions Section -->
+<section class="solutions-section">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Soluções AutoZapi</h2>
+        <div class="card-grid">
+            <div class="solution-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="card-icon fas fa-robot"></i>
+                <h3 class="card-title">Automação Inteligente</h3>
+                <p class="card-text">Chatbot 24/7 com respostas personalizadas e integração com IA.</p>
+            </div>
+            <div class="solution-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="card-icon fas fa-tasks"></i>
+                <h3 class="card-title">Gestão Centralizada</h3>
+                <p class="card-text">CRM integrado com histórico completo de interações.</p>
+            </div>
+            <div class="solution-card" data-aos="fade-up" data-aos-delay="300">
+                <i class="card-icon fas fa-network-wired"></i>
+                <h3 class="card-title">Organização</h3>
+                <p class="card-text">Sistema organizado para melhor gestão de leads e atendimentos.</p>
+            </div>
+            <div class="solution-card" data-aos="fade-up" data-aos-delay="400">
+                <i class="card-icon fas fa-chart-bar"></i>
+                <h3 class="card-title">Aumento de Conversão</h3>
+                <p class="card-text">Sistema de follow-up automático e análise de métricas.</p>
+            </div>
+            <div class="solution-card" data-aos="fade-up" data-aos-delay="500">
+                <i class="card-icon fas fa-comments"></i>
+                <h3 class="card-title">Multicanal Integrado</h3>
+                <p class="card-text">Gestão de múltiplos atendimentos em uma única plataforma.</p>
+            </div>
+            <div class="solution-card" data-aos="fade-up" data-aos-delay="600">
+                <i class="card-icon fas fa-rocket"></i>
+                <h3 class="card-title">Escalabilidade</h3>
+                <p class="card-text">Cresça sem limites com nossa infraestrutura robusta.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
 <section class="features-section">
     <div class="container">
         <h2 class="section-title" data-aos="fade-up">Funcionalidades Poderosas</h2>
-        <div class="features-grid">
+        <div class="card-grid">
             <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
-                <div class="feature-icon-wrapper">
-                    <i class="feature-icon fas fa-comments"></i>
-                </div>
-                <h3 class="feature-title">Multi-atendimento</h3>
-                <p class="feature-description">Gerencie até 30 conexões e 20 usuários simultaneamente.</p>
-                <ul class="feature-details">
-                    <li><i class="fas fa-check"></i> Múltiplos atendentes</li>
-                    <li><i class="fas fa-check"></i> Chat interno</li>
-                    <li><i class="fas fa-check"></i> Transferência de chamados</li>
-                </ul>
-                <div class="feature-hover">
-                    <span class="learn-more">Saiba mais <i class="fas fa-arrow-right"></i></span>
-                </div>
+                <i class="feature-icon fas fa-comments"></i>
+                <h3 class="card-title">Multiatendimento</h3>
+                <p class="card-text">Gerencie até 30 conexões e 20 usuários simultaneamente.</p>
             </div>
-
-            <!-- Repita o padrão para outras features -->
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+                <i class="feature-icon fas fa-forward"></i>
+                <h3 class="card-title">CRM Integrado</h3>
+                <p class="card-text">Acompanhe toda evolução do atendimento em um kanban personalizável</p>
+            </div>
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="300">
+                <i class="feature-icon fas fa-robot"></i>
+                <h3 class="card-title">Chatbot Inteligente</h3>
+                <p class="card-text">Automatize respostas com IA avançada e OpenAI.</p>
+            </div>
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="400">
+                <i class="feature-icon fas fa-plug"></i>
+                <h3 class="card-title">Integrações</h3>
+                <p class="card-text">Typebot, N8N, Dialogflow, ASAAS, Webhooks e muito mais...</p>
+            </div>
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="500">
+                <i class="feature-icon fas fa-calendar-days"></i>
+                <h3 class="card-title">Agendamentos</h3>
+                <p class="card-text">Agende suas mensagens e envie para sua base de contatos ou grupos</p>
+            </div>
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="600">
+                <i class="feature-icon fas fa-user-gear"></i>
+                <h3 class="card-title">Campanhas</h3>
+                <p class="card-text">Faça campanhas para seus contatos e agende os disparos com sistema anti-banimento.</p>
+            </div>
         </div>
     </div>
 </section>
 
-<style>
-/* Estilos para Seção de Depoimentos */
-.testimonials-section {
-    background: var(--light-bg);
-    padding: 80px 0;
-}
+<!-- Plans Section -->
+<section class="plans-section" id="plans">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Escolha o Plano Ideal</h2>
+        <div class="plan-cards">
+            <!-- Plano Teste -->
+            <div class="plan-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="plan-header">
+                    <h3 class="plan-name">Teste 4 dias Grátis</h3>
+                    <p class="plan-price">R$ 0,00<span>/grátis</span></p>
+                </div>
+                <div class="plan-content">
+                    <div class="plan-main-features">
+                        <p class="feature-highlight">2 Usuários</p>
+                        <p class="feature-highlight">2 Conexões de WhatsApp</p>
+                        <p class="feature-highlight">4 dias de acesso</p>
+                    </div>
+                    <div class="plan-features-list">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Todos os recursos ativos</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="plan-footer">
+                    <button class="cta-button" onclick="openModal('Teste 4 dias grátis')">Começar Teste Grátis</button>
+                </div>
+            </div>
 
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-}
+            <!-- Plano Iniciante -->
+            <div class="plan-card popular" data-aos="fade-up" data-aos-delay="200">
+                <div class="plan-header">
+                    <h3 class="plan-name">Iniciante</h3>
+                    <p class="plan-price">R$ 49,90<span>/mensal</span></p>
+                </div>
+                <div class="plan-content">
+                    <div class="plan-main-features">
+                        <p class="feature-highlight">2 Usuários</p>
+                        <p class="feature-highlight">2 Conexões</p>
+                        <p class="feature-highlight">5 Departamentos</p>
+                    </div>
+                    <div class="plan-features-list">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Atendimentos</li>
+                            <li><i class="fas fa-check"></i> CRM Kanban</li>
+                            <li><i class="fas fa-check"></i> Respostas Rápidas</li>
+                            <li><i class="fas fa-check"></i> Agendamentos Ilimitados</li>
+                            <li><i class="fas fa-check"></i> Chat Interno</li>
+                            <li><i class="fas fa-check"></i> Informativos</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="plan-footer">
+                    <button class="cta-button" onclick="openModal('Iniciante')">Escolher Iniciante</button>
+                </div>
+            </div>
 
-.testimonial-card {
-    background: var(--white);
-    border-radius: var(--border-radius-lg);
-    padding: 30px;
-    box-shadow: var(--shadow-md);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+            <!-- Plano Intermediário -->
+            <div class="plan-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="plan-header">
+                    <h3 class="plan-name">Intermediário</h3>
+                    <p class="plan-price">R$ 99,90<span>/mensal</span></p>
+                </div>
+                <div class="plan-content">
+                    <div class="plan-main-features">
+                        <p class="feature-highlight">5 Usuários</p>
+                        <p class="feature-highlight">5 Conexões</p>
+                        <p class="feature-highlight">10 Departamentos</p>
+                    </div>
+                    <div class="plan-features-list">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Todos recursos do Plano Básico</li>
+                            <li><i class="fas fa-plus"></i> Campanhas</li>
+                            <li><i class="fas fa-plus"></i> Integrações</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="plan-footer">
+                    <button class="cta-button" onclick="openModal('Intermediário')">Escolher Intermediário</button>
+                </div>
+            </div>
 
-.testimonial-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
-}
+            <!-- Plano Avançado -->
+            <div class="plan-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="plan-header">
+                    <h3 class="plan-name">Avançado</h3>
+                    <p class="plan-price">R$ 149,90<span>/mensal</span></p>
+                </div>
+                <div class="plan-content">
+                    <div class="plan-main-features">
+                        <p class="feature-highlight">10 Usuários</p>
+                        <p class="feature-highlight">10 Conexões</p>
+                        <p class="feature-highlight">15 Departamentos</p>
+                    </div>
+                    <div class="plan-features-list">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Todos recursos do plano Intermediário</li>
+                            <li><i class="fas fa-plus"></i> API OpenAI/ChatGPT</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="plan-footer">
+                    <button class="cta-button" onclick="openModal('Avançado')">Escolher Avançado</button>
+                </div>
+            </div>
 
-.testimonial-rating {
-    color: #ffd700;
-    margin-bottom: 15px;
-}
+            <!-- Plano Personalizado -->
+            <div class="plan-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="plan-header">
+                    <h3 class="plan-name">Personalizado</h3>
+                    <p class="plan-price">R$ 299,90<span>/mensal</span></p>
+                </div>
+                <div class="plan-content">
+                    <div class="plan-main-features">
+                        <p class="feature-highlight">15 Usuários</p>
+                        <p class="feature-highlight">15 Conexões</p>
+                        <p class="feature-highlight">20 Departamentos</p>
+                    </div>
+                    <div class="plan-features-list">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Todos recursos do plano Avançado</li>
+                            <li><i class="fas fa-plus"></i> Instalação Personalizada</li>
+                            <li><i class="fas fa-plus"></i> Logo e Cores da Empresa</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="plan-footer">
+                    <button class="cta-button" onclick="openModal('Personalizado')">Escolher Personalizado</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-.testimonial-content {
-    font-size: 1.1em;
-    line-height: 1.6;
-    color: var(--text-color);
-    margin-bottom: 20px;
-}
+<!-- Testimonials Section -->
+<section class="testimonials-section">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">O que dizem nossos clientes</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-header">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop" alt="João Silva" class="testimonial-avatar">
+                    <div class="testimonial-info">
+                        <div class="testimonial-name">João Silva</div>
+                        <div class="testimonial-position">Gerente Comercial</div>
+                    </div>
+                </div>
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "O AutoZapi revolucionou nosso atendimento. Aumentamos nossas vendas em 40% no primeiro mês de uso. A automação é perfeita e o suporte é excepcional!"
+                </p>
+            </div>
 
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-header">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop" alt="Maria Santos" class="testimonial-avatar">
+                    <div class="testimonial-info">
+                        <div class="testimonial-name">Maria Santos</div>
+                        <div class="testimonial-position">Proprietária</div>
+                    </div>
+                </div>
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "Incrível como conseguimos organizar melhor nossa equipe. O sistema de departamentos e o CRM integrado facilitaram muito nossa gestão de leads."
+                </p>
+            </div>
 
-.author-avatar {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-}
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="testimonial-header">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop" alt="Carlos Oliveira" class="testimonial-avatar">
+                    <div class="testimonial-info">
+                        <div class="testimonial-name">Carlos Oliveira</div>
+                        <div class="testimonial-position">Diretor de Marketing</div>
+                    </div>
+                </div>
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "As campanhas automáticas e a integração com IA são fantásticas. Conseguimos escalar nosso atendimento sem perder qualidade. Recomendo muito!"
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
 
-.author-info h4 {
-    margin: 0;
-    color: var(--primary-dark);
-}
+<!-- FAQ Section -->
+<section class="faq-section">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Perguntas Frequentes</h2>
+        <div class="faq-container">
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="faq-question">
+                    Como funciona o período de teste gratuito?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Oferecemos 4 dias de teste gratuito com acesso a todas as funcionalidades da plataforma. Não é necessário cartão de crédito para começar. Você terá suporte completo durante o período de testes para conhecer todas as features.
+                </div>
+            </div>
 
-.author-info p {
-    margin: 5px 0 0;
-    color: #666;
-    font-size: 0.9em;
-}
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="faq-question">
+                    Preciso instalar algo no meu celular?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Não é necessário instalar nada no seu celular. O AutoZapi funciona 100% via navegador web, sendo necessário apenas fazer o pareamento inicial do WhatsApp através do QR Code.
+                </div>
+            </div>
 
-.testimonials-stats {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 50px;
-    text-align: center;
-}
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="faq-question">
+                    Posso usar em múltiplos dispositivos?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Sim! Dependendo do seu plano, você pode usar em múltiplos dispositivos e ter vários atendentes simultaneamente. Cada plano tem um limite específico de conexões e usuários.
+                </div>
+            </div>
 
-.testimonials-stats .stat-item {
-    padding: 20px;
-}
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="faq-question">
+                    Como funciona o suporte técnico?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Oferecemos suporte técnico via WhatsApp em horário comercial (seg-sex, 9h-18h). Nosso tempo médio de resposta é de menos de 5 minutos, e temos uma base de conhecimento completa com tutoriais e guias.
+                </div>
+            </div>
 
-.testimonials-stats .stat-number {
-    font-size: 2.5em;
-    font-weight: 700;
-    color: var(--primary-dark);
-}
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                <div class="faq-question">
+                    É possível personalizar as mensagens automáticas?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Sim! Você tem total liberdade para personalizar todas as mensagens automáticas, fluxos de atendimento, e até mesmo integrar com IA para respostas mais inteligentes e contextualizadas.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-/* Estilos para Features Melhoradas */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-}
+<!-- INÍCIO STATS SECTION - DESATIVADO
+<section class="stats-section">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-users stat-icon"></i>
+                <div class="stat-number" data-target="5000">0</div>
+                <div class="stat-label">Usuários Ativos</div>
+            </div>
+            
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-comments stat-icon"></i>
+                <div class="stat-number" data-target="1000000">0</div>
+                <div class="stat-label">Mensagens por Dia</div>
+            </div>
+            
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-building stat-icon"></i>
+                <div class="stat-number" data-target="3000">0</div>
+                <div class="stat-label">Empresas Atendidas</div>
+            </div>
+        </div>
+    </div>
+</section>
+FIM STATS SECTION - DESATIVADO -->
 
-.feature-card {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: var(--border-radius-lg);
-    padding: 30px;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-}
+<!-- Final CTA Section -->
+<section class="final-cta">
+    <div class="container">
+        <h2 data-aos="fade-up">Pronto para revolucionar seu atendimento?</h2>
+        <p data-aos="fade-up" data-aos-delay="100">
+            Comece agora mesmo com 4 dias gratuitos e descubra como o AutoZapi pode transformar sua empresa
+        </p>
+        <button class="cta-button" id="final-cta" data-aos="fade-up" data-aos-delay="200">
+            Começar Teste Grátis
+        </button>
+    </div>
+</section>
 
-.feature-icon-wrapper {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 20px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-column" data-aos="fade-up">
+                <img src="footer-logo.png" alt="AutoZapi Logo" class="footer-logo">
+                <p>Revolucione seu atendimento com a melhor plataforma de automação para WhatsApp do mercado.</p>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
 
-.feature-icon {
-    font-size: 2.5em;
-    color: var(--white);
-}
+            <div class="footer-column" data-aos="fade-up" data-aos-delay="100">
+                <h3>Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Início</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Funcionalidades</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Planos</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                </ul>
+            </div>
 
-.feature-title {
-    color: var(--white);
-    font-size: 1.3em;
-    margin-bottom: 15px;
-}
+            <div class="footer-column" data-aos="fade-up" data-aos-delay="200">
+                <h3>Suporte</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-envelope"></i> contato@autozapi.com.br</a></li>
+                    <li><a href="#"><i class="fab fa-whatsapp"></i> (17) 99161-6242</a></li>
+                    <li><a href="#"><i class="fas fa-headset"></i> Central de Ajuda</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> Documentação API</a></li>
+                    <li><a href="#"><i class="fas fa-shield-alt"></i> Política de Privacidade</a></li>
+                </ul>
+            </div>
+            <div class="footer-column" data-aos="fade-up" data-aos-delay="300">
+                <h3>Newsletter</h3>
+                <p>Receba novidades e atualizações diretamente no seu e-mail.</p>
+                <form class="newsletter-form" id="newsletterForm">
+    	   <div class="form-group">
+        	<input type="email" name="email" placeholder="Seu melhor e-mail" required>
+        	<button type="submit" class="cta-button">Inscrever</button>
+    	   </div>
+</form>
+            </div>
+        </div>
 
-.feature-description {
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 20px;
-}
+        <div class="footer-bottom">
+            <p>&copy; 2025 AutoZapi. Todos os direitos reservados.</p>
+            <p>Desenvolvido com <i class="fas fa-heart"></i> pela Equipe AutoZapi</p>
+        </div>
+    </div>
+</footer>
 
-.feature-details {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-    color: var(--white);
-}
-
-.feature-details li {
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.feature-details i {
-    color: var(--primary-light);
-}
-
-.feature-hover {
-    position: absolute;
-    bottom: -50px;
-    left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 15px;
-    transition: bottom 0.3s ease;
-}
-
-.feature-card:hover {
-    transform: translateY(-10px);
-}
-
-.feature-card:hover .feature-hover {
-    bottom: 0;
-}
-
-.learn-more {
-    color: var(--white);
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-@media (max-width: 768px) {
-    .testimonials-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .testimonials-stats {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-}
-</style>
-<!-- Modal de Contato Aprimorado -->
+<!-- Modal -->
 <div id="leadModal" class="modal">
     <div class="modal-content">
-        <span class="modal-close" onclick="closeModal()">&times;</span>
-        <div class="modal-header">
-            <h2 class="modal-title">Comece Seu Teste Grátis</h2>
-            <p class="modal-subtitle">Preencha os dados e comece a revolucionar seu atendimento</p>
-        </div>
-
-        <div class="form-progress">
-            <div class="progress-bar" id="formProgress"></div>
-        </div>
-
-        <form id="leadForm" onsubmit="sendWhatsAppMessage(event)" class="enhanced-form">
-            <div class="form-step active" id="step1">
-                <div class="form-group">
-                    <label for="name">Seu Nome</label>
-                    <div class="input-wrapper">
-                        <i class="fas fa-user"></i>
-                        <input 
-                            type="text" 
-                            id="name" 
-                            class="form-input" 
-                            placeholder="Digite seu nome completo"
-                            required
-                            onkeyup="validateField('name')"
-                        >
-                    </div>
-                    <span class="form-error" id="nameError"></span>
-                </div>
-                <button type="button" class="next-step-btn" onclick="nextStep(1)">
-                    Próximo <i class="fas fa-arrow-right"></i>
-                </button>
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <h2>Fale com um Especialista</h2>
+        <form id="leadForm" onsubmit="submitForm(event)">
+            <div class="form-group">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
             </div>
-
-            <div class="form-step" id="step2">
-                <div class="form-group">
-                    <label for="whatsappNumber">Seu WhatsApp</label>
-                    <div class="input-wrapper">
-                        <i class="fab fa-whatsapp"></i>
-                        <input 
-                            type="tel" 
-                            id="whatsappNumber" 
-                            class="form-input" 
-                            placeholder="(99) 99999-9999"
-                            required
-                            onkeyup="validateField('whatsapp')"
-                        >
-                    </div>
-                    <span class="form-error" id="whatsappError"></span>
-                </div>
-                <div class="form-nav-buttons">
-                    <button type="button" class="prev-step-btn" onclick="prevStep(2)">
-                        <i class="fas fa-arrow-left"></i> Voltar
-                    </button>
-                    <button type="button" class="next-step-btn" onclick="nextStep(2)">
-                        Próximo <i class="fas fa-arrow-right"></i>
-                    </button>
-                </div>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
             </div>
-
-            <div class="form-step" id="step3">
-                <div class="form-group">
-                    <label for="email">Seu E-mail</label>
-                    <div class="input-wrapper">
-                        <i class="fas fa-envelope"></i>
-                        <input 
-                            type="email" 
-                            id="email" 
-                            class="form-input" 
-                            placeholder="seu@email.com"
-                            required
-                            onkeyup="validateField('email')"
-                        >
-                    </div>
-                    <span class="form-error" id="emailError"></span>
-                </div>
-                <div class="form-group">
-                    <label for="company">Sua Empresa</label>
-                    <div class="input-wrapper">
-                        <i class="fas fa-building"></i>
-                        <input 
-                            type="text" 
-                            id="company" 
-                            class="form-input" 
-                            placeholder="Nome da sua empresa"
-                            required
-                        >
-                    </div>
-                </div>
-                <div class="form-nav-buttons">
-                    <button type="button" class="prev-step-btn" onclick="prevStep(3)">
-                        <i class="fas fa-arrow-left"></i> Voltar
-                    </button>
-                    <button type="submit" class="submit-btn pulse-animation">
-                        Começar Agora <i class="fas fa-rocket"></i>
-                    </button>
-                </div>
+            <div class="form-group">
+    		<label for="whatsapp">WhatsApp:</label>
+    		<input type="tel" id="whatsapp" name="whatsapp" required pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" title="Digite um número no formato (99) 99999-9999">
+    		<span class="error-message">Digite um número no formato (99) 99999-9999</span>
+	    </div>
+            <div class="form-group">
+                <label for="plan">Plano de Interesse:</label>
+                <input type="text" id="plan" name="plan" readonly>
             </div>
-
-            <input type="hidden" id="planName" name="planName">
+            <button type="submit" class="cta-button">Enviar</button>
         </form>
-
-        <div class="form-benefits">
-            <div class="benefit-item">
-                <i class="fas fa-shield-alt"></i>
-                <span>Seus dados estão seguros</span>
-            </div>
-            <div class="benefit-item">
-                <i class="fas fa-clock"></i>
-                <span>Ativação imediata</span>
-            </div>
-            <div class="benefit-item">
-                <i class="fas fa-hand-holding-usd"></i>
-                <span>Sem taxa de setup</span>
-            </div>
-        </div>
     </div>
 </div>
 
-<!-- Seção Final de CTA Aprimorada -->
-<section class="final-cta">
-    <div class="container">
-        <div class="cta-content" data-aos="fade-up">
-            <h2 class="final-cta-title">Pronto para Revolucionar seu Atendimento?</h2>
-            <div class="cta-features">
-                <div class="cta-feature">
-                    <i class="fas fa-rocket"></i>
-                    <h3>Comece Hoje</h3>
-                    <p>Ative sua conta em menos de 5 minutos</p>
-                </div>
-                <div class="cta-feature">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Teste Grátis</h3>
-                    <p>4 dias para testar todos os recursos</p>
-                </div>
-                <div class="cta-feature">
-                    <i class="fas fa-headset"></i>
-                    <h3>Suporte Premium</h3>
-                    <p>Assistência técnica especializada</p>
-                </div>
-            </div>
-            <button class="cta-button mega-cta pulse-animation" onclick="openModal()">
-                Começar Teste Grátis Agora
-                <i class="fas fa-arrow-right"></i>
-            </button>
-            <div class="trust-indicators">
-                <div class="trust-item">
-                    <img src="ssl-badge.png" alt="SSL Seguro">
-                    <span>Conexão Segura</span>
-                </div>
-                <div class="trust-item">
-                    <img src="guarantee-badge.png" alt="Garantia">
-                    <span>7 Dias de Garantia</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="final-cta">
-    <div class="container">
-        <div class="cta-content" data-aos="fade-up">
-            <h2 class="final-cta-title">Pronto para Revolucionar seu Atendimento?</h2>
-            <div class="cta-features">
-                <!-- ... features ... -->
-            </div>
-            <button class="cta-button mega-cta pulse-animation" onclick="openModal()">
-                Começar Teste Grátis Agora
-                <i class="fas fa-arrow-right"></i>
-            </button>
-</section>
-<style>
-/* Estilos para o Modal Aprimorado */
-.modal {
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(5px);
-}
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-.modal-content {
-    max-width: 500px;
-    border-radius: var(--border-radius-lg);
-    padding: 40px;
-}
+    <script src="scripts.js"></script>
 
-.modal-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.modal-title {
-    color: var(--primary-dark);
-    font-size: 1.8em;
-    margin-bottom: 10px;
-}
-
-.modal-subtitle {
-    color: #666;
-    font-size: 1.1em;
-}
-
-.form-progress {
-    height: 4px;
-    background: #eee;
-    border-radius: 2px;
-    margin-bottom: 30px;
-}
-
-.progress-bar {
-    height: 100%;
-    background: var(--primary-color);
-    border-radius: 2px;
-    width: 33.33%;
-    transition: width 0.3s ease;
-}
-
-.form-step {
-    display: none;
-}
-
-.form-step.active {
-    display: block;
-}
-
-.input-wrapper {
-    position: relative;
-}
-
-.input-wrapper i {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #666;
-}
-
-.form-input {
-    width: 100%;
-    padding: 15px 15px 15px 45px;
-    border: 2px solid #e0e0e0;
-    border-radius: var(--border-radius-sm);
-    font-size: 16px;
-    transition: all var(--transition-fast);
-}
-
-.form-input:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.1);
-}
-
-.form-error {
-    color: #ff6b6b;
-    font-size: 0.9em;
-    margin-top: 5px;
-    display: none;
-}
-
-.form-nav-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.next-step-btn,
-.prev-step-btn,
-.submit-btn {
-    padding: 12px 24px;
-    border: none;
-    border-radius: var(--border-radius-sm);
-    cursor: pointer;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: all var(--transition-fast);
-}
-
-.next-step-btn,
-.submit-btn {
-    background: var(--primary-color);
-    color: white;
-}
-
-.prev-step-btn {
-    background: #f0f0f0;
-    color: #666;
-}
-
-.form-benefits {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
-}
-
-.benefit-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 10px 0;
-    color: #666;
-}
-
-.benefit-item i {
-    color: var(--primary-color);
-}
-
-/* Estilos para CTA Final */
-.final-cta {
-    background: var(--gradient-primary);
-    color: white;
-    padding: 100px 0;
-}
-
-.cta-features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin: 50px 0;
-}
-
-.cta-feature {
-    text-align: center;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: var(--border-radius-md);
-    backdrop-filter: blur(10px);
-}
-
-.cta-feature i {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-.mega-cta {
-    font-size: 1.2em;
-    padding: 20px 40px;
-}
-
-.trust-indicators {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.trust-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.trust-item img {
-    height: 40px;
-}
-
-@media (max-width: 768px) {
-    .modal-content {
-        width: 95%;
-        padding: 20px;
-    }
-
-    .cta-features {
-        grid-template-columns: 1fr;
-    }
-
-    .trust-indicators {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-</style>
-
-<script>
-// Validação de Formulário
-function validateField(field) {
-    const value = document.getElementById(field).value;
-    let error = '';
-
-    switch(field) {
-        case 'name':
-            if (value.length < 3) {
-                error = 'Nome deve ter no mínimo 3 caracteres';
-            }
-            break;
-        case 'whatsapp':
-            if (!value.match(/^\(\d{2}\)\s\d{5}-\d{4}$/)) {
-                error = 'Digite um número válido: (99) 99999-9999';
-            }
-            break;
-        case 'email':
-            if (!value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-                error = 'Digite um e-mail válido';
-            }
-            break;
-    }
-
-    const errorElement = document.getElementById(`${field}Error`);
-    errorElement.textContent = error;
-    errorElement.style.display = error ? 'block' : 'none';
-    return !error;
-}
-
-// Navegação do Formulário
-function nextStep(currentStep) {
-    if (currentStep === 1 && !validateField('name')) return;
-    if (currentStep === 2 && !validateField('whatsapp')) return;
-
-    document.getElementById(`step${currentStep}`).classList.remove('active');
-    document.getElementById(`step${currentStep + 1}`).classList.add('active');
-    document.getElementById('formProgress').style.width = `${(currentStep + 1) * 33.33}%`;
-}
-
-function prevStep(currentStep) {
-    document.getElementById(`step${currentStep}`).classList.remove('active');
-    document.getElementById(`step${currentStep - 1}`).classList.add('active');
-    document.getElementById('formProgress').style.width = `${(currentStep - 1) * 33.33}%`;
-}
-
-// Envio do Formulário
-function sendWhatsAppMessage(event) {
-    event.preventDefault();
-
-    if (!validateField('email')) return;
-
-    const name = document.getElementById('name').value;
-    const whatsapp = document.getElementById('whatsappNumber').value;
-    const email = document.getElementById('email').value;
-    const company = document.getElementById('company').value;
-    const planName = document.getElementById('planName').value;
-
-    const message = `Olá! Me chamo ${name} da empresa ${company}. 
-        WhatsApp: ${whatsapp}
-        E-mail: ${email}
-        Plano de interesse: ${planName}
-        Gostaria de começar o teste grátis.`;
-
-    window.open(`https://wa.me/5517991616242?text=${encodeURIComponent(message)}`, '_blank');
-    closeModal();
-}
-</script>
-    
-      <!-- Trust Indicators -->
-        <div class="trust-indicators">
-            <div class="trust-item">
-                <img src="https://cdn.jsdelivr.net/gh/RafAdmin/az_site/assets/ssl-secure.svg" alt="SSL Seguro" 
-                     onerror="this.src='https://www.gstatic.com/images/icons/material/system/2x/security_grey600_24dp.png'">
-                <span>Conexão Segura SSL</span>
-            </div>
-            <div class="trust-item">
-                <img src="https://cdn.jsdelivr.net/gh/RafAdmin/az_site/assets/guarantee.svg" alt="Garantia" 
-                     onerror="this.src='https://www.gstatic.com/images/icons/material/system/2x/verified_user_grey600_24dp.png'">
-                <span>7 Dias de Garantia</span>
-            </div>
-            <div class="trust-item">
-                <img src="https://images.google.com/s2/favicons?domain=norton.com&sz=64" alt="Norton Secured">
-                <span>Site Verificado</span>
-            </div>
-        </div>
-
-    </body>
+</body>
 </html>
-    
-    
