@@ -1,17 +1,33 @@
 // scripts.js
-// Todo seu JavaScript aqui
 
-
-    // Inicialização do AOS
-    document.addEventListener('DOMContentLoaded', function() {
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
+	// Inicialização do AOS
+	document.addEventListener('DOMContentLoaded', function() {
+    	// Inicializa o AOS
+   	AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100
     });
+    
+    // Configurações dos CTAs
+    const headerCTA = document.getElementById('header-cta');
+    if (headerCTA) {
+        headerCTA.addEventListener('click', function() {
+            document.getElementById('plans').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    }
 
-    // Animação dos números
+    const finalCTA = document.getElementById('final-cta');
+    if (finalCTA) {
+        finalCTA.addEventListener('click', function() {
+            openModal('Teste 4 dias grátis');
+        });
+    }
+
+	// Animação dos números
     function animateNumber(element) {
         const final = parseInt(element.getAttribute('data-value'));
         let current = 0;
